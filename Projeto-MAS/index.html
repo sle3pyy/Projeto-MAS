@@ -13,12 +13,11 @@
     <link rel="stylesheet" href="myCSS.css" />
    <style>
     .carousel-item {
-        height: 300px;
+        height:50vh;
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
         border-radius: 25px;
-        float:left
     }
 
         .carousel-item:nth-child(1) {
@@ -40,6 +39,7 @@
         .carousel-item:nth-child(5) {
             background-image: url('');
         }
+        
 </style>
 </head>
 <body>
@@ -68,15 +68,8 @@
         </div>
     </nav>
     <div class="container-sm bb" style="position: relative; top: 200px;">
-        <div class="row">
-        <div id="myCarousel" class="carousel slide carousel-fade mb-5 col-4 align-bottom" data-bs-ride="carousel" data-bs-interval="10000">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 3"></button>
-            </div>
+        <div class="row" style="height:inherit; width:inherit">
+        <div id="myCarousel" class="carousel slide carousel-fade mb-5 col-4 align-self-start" data-bs-ride="carousel" data-bs-interval="10000">
             <div class="carousel-inner">
                 <div class="carousel-item active"></div>
                 <div class="carousel-item"></div>
