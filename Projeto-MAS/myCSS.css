@@ -9,6 +9,17 @@ header {
 .navbar {    
     background: #083484;
 }
+
 .textb{
     color:white;
+}
+.bb{
+    border:solid 1px;
+    border-radius: 25px;
+}
+.bb2{
+    border:solid 1px;
+    border-radius: 25px;
+    background-color: #04a0e0;
+    border-color: #04a0e0;
 }
