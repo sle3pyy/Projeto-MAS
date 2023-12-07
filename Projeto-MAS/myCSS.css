@@ -32,3 +32,7 @@ header {
 body{
     background-color: #f8f4fc;
 }
+.cardz{
+    background-color:rgba(255,255,255,1);
+    border-radius: 25px;
+}

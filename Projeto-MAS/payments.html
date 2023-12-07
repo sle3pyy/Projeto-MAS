@@ -1,9 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
+<html>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>booking-form</title>
+    <title>payments</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
@@ -11,6 +10,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="myCSS.css" />
     <style>
+        body {
+            width: 500px;
+            margin: 0 auto;
+            padding: 50px;
+          }
           
           div.elem-group {
             margin: 20px 0;
@@ -32,18 +36,25 @@
           
           input, select, textarea {
             border-radius: 2px;
-            border: 1px solid #777;
+            border: 2px solid #777;
             box-sizing: border-box;
             font-size: 1.25em;
             font-family: 'Nanum Gothic';
             width: 100%;
             padding: 10px;
-            border-radius:15px;
           }
           
           div.elem-group.inlined input {
             width: 95%;
             display: inline-block;
+          }
+          
+          textarea {
+            height: 250px;
+          }
+          
+          hr {
+            border: 1px dotted #ccc;
           }
           
           button {
@@ -61,8 +72,8 @@
             border: 2px solid black;
           }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html" tabindex="petbooking"><img src="https://cdn.discordapp.com/attachments/1180576288730263716/1180576315015962655/image.png?ex=657dec5f&is=656b775f&hm=6629b5d5bce580488c9a3a0384a4ca4141c00ccc303a7a9f670edb596ac34fe3&" height="24" /></a>
@@ -87,59 +98,8 @@
             </div>
         </div>
     </nav>
-    <div style="height:50px"></div>
-    <div class="container">
-      <div class="row ">
-        <div class="col-9 cardz">
-    <form action="reservation.php" method="post">
-        <div class="elem-group inlined">
-          <label for="name">Nome</label>
-          <input type="text" id="name" name="visitor_name" placeholder="nome..." pattern=[A-Z\sa-z]{3,20} required>
-        </div>
-        <div class="elem-group inlined">
-          <label for="email">O seu E-mail</label>
-          <input type="email" id="email" name="visitor_email" placeholder="pet@email.com" required>
-        </div>
-        <div class="elem-group inlined">
-          <label for="phone">telefone</label>
-          <input type="tel" id="phone" name="visitor_phone" placeholder="111111111" pattern=(\d{9})) required>
-        </div>
-        <div class="elem-group inlined">
-          <label for="phone">NIF</label>
-          <input type="tel" id="phone" name="visitor_phone" placeholder="111111111" pattern=(\d{9})) required>
-        </div>
-        <div class="elem-group inlined">
-        <label for="pet-selection">Selecione o pet</label>
-          <select id="pet-selection" name="pet" required>
-              <option value="">os seus pets...</option>
-              <option value="pet 1">pet 1</option>
-              <option value="pet 2">pet 2</option>
-              <option value="pet 2">pet 3</option>
-          </select>
-        </div>
-      </form>
-    </div>
-    <div class="col-3 cardz">
-      <div class="elem-group">
-      <label for="imgh" >Hotel e spa</label>
-      <img src="https://i.kym-cdn.com/entries/icons/original/000/046/895/huh_cat.jpg" class="img-fluid rounded float-start" id="imgh">
-      </div>
-      <div class="elem-group inlined">
-        <label for="checkin-date">CHECK-in</label>
-        <input type="date" id="checkin-date" name="checkin" required>
-      </div>
-      <div class="elem-group inlined">
-        <label for="checkout-date">CHECK-out</label>
-        <input type="date" id="checkout-date" name="checkout" required>
-      </div>
-      <h5>Preço</h5>
-      <div class="elem-group">
-       
-      </div>
-    </div>
-    </div>
-    </div>  
-
+    <form>
+    
     <nav class="navbar navbar-transparent bg-transparent fixed-bottom">
         <div class="container small">
             <div class="navbar-text">&copy;  Modelaçção e análise de sistemas - 2023/24</div>
@@ -152,5 +112,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-</body>
+  </body>
 </html>
