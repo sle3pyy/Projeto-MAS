@@ -10,13 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="myCSS.css" />
     <style>
-        body {
-            width: 500px;
-            margin: 0 auto;
-            padding: 50px;
-          }
-          
-          div.elem-group {
+        div.elem-group {
             margin: 20px 0;
           }
           
@@ -36,25 +30,18 @@
           
           input, select, textarea {
             border-radius: 2px;
-            border: 2px solid #777;
+            border: 1px solid #777;
             box-sizing: border-box;
             font-size: 1.25em;
             font-family: 'Nanum Gothic';
             width: 100%;
             padding: 10px;
+            border-radius:15px;
           }
           
           div.elem-group.inlined input {
             width: 95%;
             display: inline-block;
-          }
-          
-          textarea {
-            height: 250px;
-          }
-          
-          hr {
-            border: 1px dotted #ccc;
           }
           
           button {
@@ -64,8 +51,9 @@
             color: white;
             font-size: 1.25em;
             font-family: 'Nanum Gothic';
-            border-radius: 4px;
+            border-radius: 25px;
             cursor: pointer;
+            width:100%;
           }
           
           button:hover {
@@ -99,29 +87,83 @@
         </div>
     </nav>
     <form>
-    <div class="elem-group">
-    <label for="card_type">Tipo de cartão</label>
-      <select name="card_type" id="card_type" required="">
-        <option value="">---seleciona o tipo de cartão--</option>
-        <option value="visa">Visa</option>
-        <option value="rupy">Rupay</option>
-        <option value="master card">Master Card</option>        
-      </select>    
+    <div style="height:50px"></div>
+    <div class="container">
+    <div class="row ">
+        <div class="col-9 ">
+        <div class="cardz">
+        <form action="reservation.php" method="post"></form>
+          <div class="elem-group">
+            <label for="card_type">Tipo de cartão</label>
+              <select name="card_type" id="card_type" required="">
+                <option value="">---seleciona o tipo de cartão--</option>
+                <option value="visa">Visa</option>
+                <option value="rupy">Rupay</option>
+                <option value="master card">Master Card</option>        
+              </select>    
+            </div>
+            <div class="elem-group">
+                <label for="Card Number">Número do cartão</label>
+                <input type="number" name="card Number" id="Card Number" required="">
+            </div>
+            <div class="elem-group">
+            <label for="exp_date">Data de expirção</label>
+              <input type="date" name="exp_date" id="exp_date" required="">
+            </div>
+            <div class="elem-group">
+                <label for="exp_date">Data de expirção</label>
+                <input type="password" name="CVV" id="CVV" required="">
+            </div>
+            <input type="submit" name="" id="" value="Pay Now" />           
+    <div style="height:50px"></div>
+    </form>
+        </div></div>
+
+    <div class="col-3 " style="float:right">
+      <div class="cardz">
+      <div class="elem-group">
+      <label for="imgh" >Hotel e spa</label>
+      <img src="https://i.kym-cdn.com/entries/icons/original/000/046/895/huh_cat.jpg" class="img-fluid rounded float-start" id="imgh">
+      </div>
+      <h5>Preço</h5>
+      <div class="elem-group" style="background-color: rgba(210,210,210,1); border-radius: 15px">
+      <div class="elem-group inlined">  
+       <h5 style="float:left">1 noite</h5>
+      </div>
+      <div class="elem-group inlined">  
+        <h5 style="float:right">159.99€</h5>
+       </div>
+      <div class="elem-group inlined">
+       <h5 style="float:left">SPA</h5>
+      </div>
+      <div class="elem-group inlined">
+        <h5 style="float:right">40€</h5>
+       </div>
+      <div class="elem-group inlined">
+        <h5 style="float:left">Total:</h5>
+      </div>
+      <div class="elem-group inlined">
+        <h5 style="float:right">199.99€</h5>
+      </div>
+      </div>
+      <div class="elem-group">
+        <a href="" class="btn btn-default"></a>
+      </div>
     </div>
-    <div class="elem-group">
-        <label for="Card Number">Número do cartão</label>
-        <input type="number" name="card Number" id="Card Number" required="">
+    <div class="cardz">
+      <div class="elem-group">  
+        <h3>Cancelamento</h3>
+      </div>
+      <div class="elem-group">  
+        <h5>Quarto 1</h5>
+        <p>grátis uma semana antes</p>
+        <p>Não é permitida devolução a partir desta data</p>
+      </div>
     </div>
-    <div class="elem-group">
-    <label for="exp_date">Data de expirção</label>
-      <input type="date" name="exp_date" id="exp_date" required="">
     </div>
-    <div class="elem-group">
-        <label for="exp_date">Data de expirção</label>
-        <input type="password" name="CVV" id="CVV" required="">
     </div>
-    <input type="submit" name="" id="" value="Pay Now" />
-   
+    </div>  
+
     </form>
     <nav class="navbar navbar-transparent bg-transparent fixed-bottom">
         <div class="container small">
