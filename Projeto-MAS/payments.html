@@ -99,7 +99,30 @@
         </div>
     </nav>
     <form>
-    
+    <div class="elem-group">
+    <label for="card_type">Tipo de cartão</label>
+      <select name="card_type" id="card_type" required="">
+        <option value="">---seleciona o tipo de cartão--</option>
+        <option value="visa">Visa</option>
+        <option value="rupy">Rupay</option>
+        <option value="master card">Master Card</option>        
+      </select>    
+    </div>
+    <div class="elem-group">
+        <label for="Card Number">Número do cartão</label>
+        <input type="number" name="card Number" id="Card Number" required="">
+    </div>
+    <div class="elem-group">
+    <label for="exp_date">Data de expirção</label>
+      <input type="date" name="exp_date" id="exp_date" required="">
+    </div>
+    <div class="elem-group">
+        <label for="exp_date">Data de expirção</label>
+        <input type="password" name="CVV" id="CVV" required="">
+    </div>
+    <input type="submit" name="" id="" value="Pay Now" />
+   
+    </form>
     <nav class="navbar navbar-transparent bg-transparent fixed-bottom">
         <div class="container small">
             <div class="navbar-text">&copy;  Modelaçção e análise de sistemas - 2023/24</div>

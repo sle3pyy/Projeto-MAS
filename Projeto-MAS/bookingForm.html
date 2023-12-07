@@ -53,8 +53,9 @@
             color: white;
             font-size: 1.25em;
             font-family: 'Nanum Gothic';
-            border-radius: 4px;
+            border-radius: 25px;
             cursor: pointer;
+            width:100%;
           }
           
           button:hover {
@@ -90,8 +91,12 @@
     <div style="height:50px"></div>
     <div class="container">
       <div class="row ">
-        <div class="col-9 cardz">
-    <form action="reservation.php" method="post">
+        <div class="col-9 ">
+          <div class="cardz">
+        <form action="reservation.php" method="post"></form>
+          <div class="elem-group">
+            <h3>Informação do Cliente</h3>
+          </div>        
         <div class="elem-group inlined">
           <label for="name">Nome</label>
           <input type="text" id="name" name="visitor_name" placeholder="nome..." pattern=[A-Z\sa-z]{3,20} required>
@@ -108,7 +113,7 @@
           <label for="phone">NIF</label>
           <input type="tel" id="phone" name="visitor_phone" placeholder="111111111" pattern=(\d{9})) required>
         </div>
-        <div class="elem-group inlined">
+        <div class="elem-group">
         <label for="pet-selection">Selecione o pet</label>
           <select id="pet-selection" name="pet" required>
               <option value="">os seus pets...</option>
@@ -117,9 +122,54 @@
               <option value="pet 2">pet 3</option>
           </select>
         </div>
-      </form>
+      </div>
+        <div class="cardz elem-group">
+        <div class="elem-group">  
+        <h3>Morada</h3>
+        </div>
+      <div class="row">
+      <div class="elem-group">
+        <label for="name">Rua</label>
+        <input type="text" id="ura" name="rua" placeholder="rua..." pattern=[A-Z\sa-z]{3,20} required>
+      </div>
+      <div class="elem-group col-4">
+        <label for="name">CP</label>
+        <input type="text" id="CP" name="CP" placeholder="CP" required>
+      </div>
+      <div class="elem-group col-4">
+        <label for="name">Cidade</label>
+        <input type="text" id="Cidade" name="Cidade" placeholder="Cidade" pattern=[A-Z\sa-z]{2,20} required>
+      </div>
+      <div class="elem-group col-4">
+        <label for="name">País</label>
+        <input type="text" id="País" name="País" placeholder="País" pattern=[A-Z\sa-z]{3,20} required>
+      </div>
     </div>
-    <div class="col-3 cardz">
+    </div>
+    <div class="elem-group cardz">
+      <div class="elem-group">  
+        <h3>Pagamento</h3>
+      </div>
+      <div class="elem-group">
+        <label for="card_type">Método de Pagamento</label>
+          <select name="card_type" id="card_type" required="">
+            <option value="">---seleciona o método de pagamento--</option>
+            <option value="MBway">MBway</option>
+            <option value="VISA">VISA</option>
+            <option value="Multibanco">Multibanco</option>
+            <option value="master card">Master Card</option>        
+          </select>    
+        </div>
+    </div>
+    <div class="elem-group">
+    <a href="./payments.html" class="btn btn-primary" style="width:100%, border-radius: 25px">Confrimação</a>
+    </div>
+    <div style="height:50px"></div>
+    </form>
+  </div> 
+
+    <div class="col-3 ">
+      <div class="cardz">
       <div class="elem-group">
       <label for="imgh" >Hotel e spa</label>
       <img src="https://i.kym-cdn.com/entries/icons/original/000/046/895/huh_cat.jpg" class="img-fluid rounded float-start" id="imgh">
@@ -133,14 +183,45 @@
         <input type="date" id="checkout-date" name="checkout" required>
       </div>
       <h5>Preço</h5>
-      <div class="elem-group">
-       
+      <div class="elem-group" style="background-color: rgba(210,210,210,1); border-radius: 15px">
+      <div class="elem-group inlined">  
+       <h5 style="float:left">1 noite</h5>
       </div>
+      <div class="elem-group inlined">  
+        <h5 style="float:right">159.99€</h5>
+       </div>
+      <div class="elem-group inlined">
+       <h5 style="float:left">SPA</h5>
+      </div>
+      <div class="elem-group inlined">
+        <h5 style="float:right">40€</h5>
+       </div>
+      <div class="elem-group inlined">
+        <h5 style="float:left">Total:</h5>
+      </div>
+      <div class="elem-group inlined">
+        <h5 style="float:right">199.99€</h5>
+      </div>
+      </div>
+      <div class="elem-group">
+        <a href="./payments.html" class="btn btn-primary">Pagar agora</a>
+      </div>
+    </div>
+    <div class="cardz">
+      <div class="elem-group">  
+        <h3>Cancelamento</h3>
+      </div>
+      <div class="elem-group">  
+        <h5>Quarto 1</h5>
+        <p>grátis uma semana antes</p>
+        <p>Não é permitida devolução a partir desta data</p>
+      </div>
+    </div>
     </div>
     </div>
     </div>  
 
-    <nav class="navbar navbar-transparent bg-transparent fixed-bottom">
+    <nav class="navbar navbar-light bg-light fixed-bottom">
         <div class="container small">
             <div class="navbar-text">&copy;  Modelaçção e análise de sistemas - 2023/24</div>
             <div class="navbar-nav">
