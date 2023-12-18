@@ -24,6 +24,9 @@ $(document).ready(function() {
 
         // Store the JSON string in local storage
         localStorage.setItem('accounts', json);
+
+        
+
         console.log(JSON.parse(localStorage.getItem('accounts')));
     });
 });
