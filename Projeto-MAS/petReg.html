@@ -33,7 +33,7 @@
             <div class="border-bottom pt-4 pb-2 mb-3">
                 <div class="row">
         <!-- Título do formulário -->
-        <h2 class="text-center mb-4">Criar Conta</h2>
+        <h2 class="text-center mb-4">Adicionar Animal</h2>
                 </div>
             </div>
 
@@ -41,7 +41,7 @@
         <form class="row g-3">
             <div class="col-md-6">
                 <label for="petName" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="petName" placeholder="nome" required>
+                <input type="text" class="form-control" id="name" placeholder="nome" required>
             </div>
             <div class="col-md-6">
                 <label for="animalType" class="form-label">Animal</label>
@@ -77,6 +77,8 @@
 <input type="file" class="form-control" id="petPhoto" accept=".png, .jpg, .jpeg" required>
                 </div>
             </div>
+            <button id="clearAnimals">Clear Animals</button>
+            <button id="logAccounts">Log Accounts</button>
 
             <!-- Botão de Submissão -->
             <div class="centered mb-3 text-center">
