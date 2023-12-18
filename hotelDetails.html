@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        :root {
+  --paragraph-color: rgba(51, 51, 51, 1);
+  --title-color: rgba(13, 47, 63, 1);
+  --white-color: rgba(255, 255, 255, 1);
+  --gray-1: rgba(51, 51, 51, 1);
+  --secondary-color: rgba(255, 198, 45, 1);
+  --smooth-1: 0px 4px 50px 0px rgba(0, 0, 0, 0.07);
+}
+
+        .frame {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.frame .overlap-wrapper {
+  width: 751px;
+  height: 1451px;
+}
+
+.frame .overlap {
+  position: relative;
+  height: 1443px;
+  top: 8px;
+}
+
+.frame .hotel {
+  position: absolute;
+  width: 751px;
+  height: 1443px;
+  top: 0;
+  left: 0;
+}
+
+.frame .div {
+  position: relative;
+  height: 1443px;
+  background-image: url(./img/menu.svg);
+  background-size: 100% 100%;
+}
+
+.frame .overlap-group {
+  position: absolute;
+  width: 726px;
+  height: 1237px;
+  top: 160px;
+  left: 27px;
+}
+
+.frame .overlap-2 {
+  position: absolute;
+  width: 726px;
+  height: 1237px;
+  top: 0;
+  left: 0;
+}
+
+.frame .overlap-3 {
+  position: absolute;
+  width: 698px;
+  height: 644px;
+  top: 0;
+  left: 0;
+}
+
+.frame .filtro {
+  position: absolute;
+  width: 195px;
+  height: 451px;
+  top: 0;
+  left: 0;
+  background-color: #feba02;
+  border-radius: 8px;
+  box-shadow: var(--smooth-1);
+}
+
+.frame .filtro-2 {
+  position: relative;
+  width: 182px;
+  height: 395px;
+  top: 8px;
+  left: 6px;
+}
+
+.frame .image {
+  width: 182px;
+  height: 108px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+}
+
+.frame .overlap-4 {
+  position: absolute;
+  width: 171px;
+  height: 278px;
+  top: 117px;
+  left: 7px;
+}
+
+.frame .data {
+  position: absolute;
+  width: 171px;
+  height: 76px;
+  top: 0;
+  left: 0;
+}
+
+.frame .overlap-group-2 {
+  position: absolute;
+  width: 167px;
+  height: 41px;
+  top: 22px;
+  left: 0;
+}
+
+.frame .data-2 {
+  position: absolute;
+  width: 167px;
+  height: 36px;
+  top: 0;
+  left: 0;
+  background-color: #f2f6fa;
+  border-radius: 8px;
+}
+
+.frame .text-wrapper {
+  position: absolute;
+  width: 156px;
+  top: 9px;
+  left: 7px;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14.3px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .text-wrapper-2 {
+  position: absolute;
+  width: 73px;
+  top: 0;
+  left: 14px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--paragraph-color);
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.frame .vuesax-outline {
+  position: absolute;
+  width: 8px;
+  height: 9px;
+  top: 67px;
+  left: 0;
+}
+
+.frame .data-3 {
+  position: absolute;
+  width: 171px;
+  height: 63px;
+  top: 60px;
+  left: 0;
+}
+
+.frame .group {
+  position: absolute;
+  width: 8px;
+  height: 9px;
+  top: 7px;
+  left: 0;
+}
+
+.frame .preo {
+  position: absolute;
+  width: 169px;
+  height: 155px;
+  top: 123px;
+  left: 0;
+}
+
+.frame .text-wrapper-3 {
+  position: absolute;
+  width: 60px;
+  top: 0;
+  left: 1px;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.frame .group-wrapper {
+  position: absolute;
+  width: 167px;
+  height: 131px;
+  top: 24px;
+  left: 0;
+  background-color: #f4f5f6;
+  border-radius: 8px;
+}
+
+.frame .group-2 {
+  position: relative;
+  width: 155px;
+  height: 96px;
+  top: 16px;
+  left: 11px;
+}
+
+.frame .text-wrapper-4 {
+  position: absolute;
+  width: 76px;
+  top: 0;
+  left: 0;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #0d2f3f;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.frame .overlap-group-3 {
+  position: absolute;
+  width: 144px;
+  height: 15px;
+  top: 34px;
+  left: 0;
+}
+
+.frame .text-wrapper-5 {
+  width: 82px;
+  top: 0;
+  left: 0;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #0d2f3f;
+  font-size: 14px;
+  white-space: nowrap;
+  position: absolute;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .text-wrapper-6 {
+  width: 95px;
+  top: 2px;
+  left: 49px;
+  font-family: "Alatsi-Regular", Helvetica;
+  color: #0d2f3f;
+  font-size: 14px;
+  text-align: right;
+  white-space: nowrap;
+  position: absolute;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .text-wrapper-7 {
+  width: 61px;
+  top: 0;
+  left: 84px;
+  font-family: "Alatsi-Regular", Helvetica;
+  color: #0d2f3f;
+  font-size: 14px;
+  text-align: right;
+  white-space: nowrap;
+  position: absolute;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .text-wrapper-8 {
+  width: 62px;
+  top: 83px;
+  left: 82px;
+  font-family: "Alatsi-Regular", Helvetica;
+  color: #0d2f3f;
+  font-size: 14px;
+  text-align: right;
+  white-space: nowrap;
+  position: absolute;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .div-wrapper {
+  position: absolute;
+  width: 684px;
+  height: 565px;
+  top: 0;
+  left: 14px;
+}
+
+.frame .group-3 {
+  position: relative;
+  width: 686px;
+  height: 565px;
+}
+
+.frame .overlap-5 {
+  position: absolute;
+  width: 489px;
+  height: 565px;
+  top: 0;
+  left: 198px;
+}
+
+.frame .rectangle {
+  position: absolute;
+  width: 486px;
+  height: 565px;
+  top: 0;
+  left: 0;
+  background-color: var(--white-color);
+  border-radius: 8px;
+  box-shadow: var(--smooth-1);
+}
+
+.frame .group-4 {
+  position: absolute;
+  width: 482px;
+  height: 95px;
+  top: 376px;
+  left: 7px;
+}
+
+.frame .p {
+  position: absolute;
+  width: 458px;
+  top: 42px;
+  left: 0;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 28px;
+}
+
+.frame .overlap-group-4 {
+  position: absolute;
+  width: 472px;
+  height: 2px;
+  top: 28px;
+  left: 0;
+}
+
+.frame .line {
+  position: absolute;
+  width: 472px;
+  height: 1px;
+  top: 2px;
+  left: 0;
+  object-fit: cover;
+}
+
+.frame .rectangle-2 {
+  position: absolute;
+  width: 74px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background-color: var(--title-color);
+  border-radius: 20px;
+}
+
+.frame .text-wrapper-9 {
+  position: absolute;
+  width: 74px;
+  top: 0;
+  left: 0;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #0d2f3f;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.frame .text-wrapper-10 {
+  position: absolute;
+  width: 62px;
+  top: 0;
+  left: 87px;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #0d2f3f;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.frame .text-wrapper-11 {
+  position: absolute;
+  width: 67px;
+  top: 0;
+  left: 161px;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #0d2f3f;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.frame .text-wrapper-12 {
+  position: absolute;
+  width: 113px;
+  top: 0;
+  left: 232px;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #0d2f3f;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.frame .img {
+  width: 472px;
+  height: 320px;
+  top: 8px;
+  left: 7px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.frame .text-wrapper-13 {
+  position: absolute;
+  width: 229px;
+  top: 346px;
+  left: 7px;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #0d2f3f;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.frame .group-5 {
+  position: absolute;
+  width: 29px;
+  height: 9px;
+  top: 308px;
+  left: 230px;
+}
+
+.frame .group-6 {
+  position: relative;
+  height: 9px;
+}
+
+.frame .rectangle-3 {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  top: 3px;
+  left: 0;
+  background-color: var(--white-color);
+  border-radius: 56px;
+}
+
+.frame .rectangle-4 {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  top: 2px;
+  left: 6px;
+  background-color: var(--white-color);
+  border-radius: 56px;
+}
+
+.frame .rectangle-5 {
+  position: absolute;
+  width: 8px;
+  height: 9px;
+  top: 0;
+  left: 13px;
+  background-color: var(--secondary-color);
+  border-radius: 56px;
+}
+
+.frame .rectangle-6 {
+  position: absolute;
+  width: 5px;
+  height: 6px;
+  top: 2px;
+  left: 24px;
+  background-color: var(--white-color);
+  border-radius: 56px;
+}
+
+.frame .botao {
+  position: absolute;
+  width: 166px;
+  height: 28px;
+  top: 409px;
+  left: 0;
+  background-color: #009fe3;
+  border-radius: 4px;
+}
+
+.frame .botao-2 {
+  position: relative;
+  width: 57px;
+  height: 13px;
+  top: 8px;
+  left: 56px;
+}
+
+.frame .text-wrapper-14 {
+  width: 40px;
+  top: 0;
+  left: 0;
+  font-family: "Barlow-Medium", Helvetica;
+  font-weight: 500;
+  color: var(--white-color);
+  font-size: 10px;
+  white-space: nowrap;
+  position: absolute;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .seta {
+  position: absolute;
+  width: 10px;
+  height: 12px;
+  top: 1px;
+  left: 45px;
+}
+
+.frame .star {
+  left: 315px;
+  position: absolute;
+  width: 17px;
+  height: 18px;
+  top: 348px;
+}
+
+.frame .star-2 {
+  left: 337px;
+  position: absolute;
+  width: 17px;
+  height: 18px;
+  top: 348px;
+}
+
+.frame .star-3 {
+  left: 359px;
+  position: absolute;
+  width: 17px;
+  height: 18px;
+  top: 348px;
+}
+
+.frame .star-4 {
+  left: 381px;
+  position: absolute;
+  width: 17px;
+  height: 18px;
+  top: 348px;
+}
+
+.frame .star-5 {
+  left: 403px;
+  position: absolute;
+  width: 17px;
+  height: 18px;
+  top: 348px;
+}
+
+.frame .overlap-group-wrapper {
+  position: absolute;
+  width: 195px;
+  height: 84px;
+  top: 465px;
+  left: 0;
+}
+
+.frame .overlap-6 {
+  position: relative;
+  width: 197px;
+  height: 84px;
+}
+
+.frame .group-7 {
+  position: absolute;
+  width: 197px;
+  height: 84px;
+  top: 0;
+  left: 0;
+}
+
+.frame .overlap-7 {
+  position: relative;
+  width: 195px;
+  height: 84px;
+}
+
+.frame .image-2 {
+  width: 93px;
+  height: 84px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+}
+
+.frame .rectangle-7 {
+  position: absolute;
+  width: 110px;
+  height: 84px;
+  top: 0;
+  left: 85px;
+  background-color: var(--white-color);
+  border-radius: 0px 8px 8px 0px;
+  box-shadow: var(--smooth-1);
+}
+
+.frame .text-wrapper-15 {
+  position: absolute;
+  width: 94px;
+  top: 11px;
+  left: 94px;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #0d2f3f;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.frame .botao-wrapper {
+  position: absolute;
+  width: 48px;
+  height: 21px;
+  top: 58px;
+  left: 143px;
+  background-color: #009fe3;
+  border-radius: 4px;
+}
+
+.frame .botao-3 {
+  position: relative;
+  width: 41px;
+  height: 10px;
+  top: 5px;
+  left: 5px;
+}
+
+.frame .overlap-group-5 {
+  position: relative;
+  width: 39px;
+  height: 10px;
+}
+
+.frame .text-wrapper-16 {
+  position: absolute;
+  width: 35px;
+  top: 2px;
+  left: 0;
+  font-family: "Barlow-Medium", Helvetica;
+  font-weight: 500;
+  color: var(--white-color);
+  font-size: 6px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .seta-2 {
+  position: absolute;
+  width: 7px;
+  height: 9px;
+  top: 0;
+  left: 32px;
+}
+
+.frame .group-8 {
+  position: absolute;
+  width: 12px;
+  height: 5px;
+  top: 74px;
+  left: 37px;
+}
+
+.frame .group-9 {
+  position: relative;
+  height: 5px;
+}
+
+.frame .rectangle-8 {
+  position: absolute;
+  width: 1px;
+  height: 2px;
+  top: 2px;
+  left: 0;
+  background-color: var(--white-color);
+  border-radius: 56px;
+}
+
+.frame .rectangle-9 {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  top: 1px;
+  left: 2px;
+  background-color: var(--white-color);
+  border-radius: 56px;
+}
+
+.frame .rectangle-10 {
+  position: absolute;
+  width: 3px;
+  height: 5px;
+  top: 0;
+  left: 5px;
+  background-color: var(--secondary-color);
+  border-radius: 56px;
+}
+
+.frame .rectangle-11 {
+  position: absolute;
+  width: 2px;
+  height: 3px;
+  top: 1px;
+  left: 10px;
+  background-color: var(--white-color);
+  border-radius: 56px;
+}
+
+.frame .group-10 {
+  position: absolute;
+  width: 51px;
+  height: 6px;
+  top: 59px;
+  left: 94px;
+}
+
+.frame .text-wrapper-17 {
+  position: absolute;
+  width: 49px;
+  top: 0;
+  left: 0;
+  font-family: "Barlow-Bold", Helvetica;
+  font-weight: 700;
+  color: #0d2f3f;
+  font-size: 11px;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.frame .hotel-2 {
+  position: absolute;
+  width: 195px;
+  height: 84px;
+  top: 560px;
+  left: 0;
+}
+
+.frame .image-3 {
+  width: 85px;
+  height: 84px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+}
+
+.frame .group-11 {
+  position: absolute;
+  width: 515px;
+  height: 662px;
+  top: 575px;
+  left: 211px;
+}
+
+.frame .overlap-8 {
+  position: relative;
+  width: 487px;
+  height: 662px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.frame .text-wrapper-18 {
+  position: absolute;
+  width: 116px;
+  top: 231px;
+  left: 8px;
+  font-family: "Barlow-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #0d2f3f;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 32px;
+  white-space: nowrap;
+}
+
+.frame .text-wrapper-19 {
+  position: absolute;
+  width: 431px;
+  top: 256px;
+  left: 8px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--gray-1);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.frame .text-wrapper-20 {
+  width: 119px;
+  top: 291px;
+  left: 8px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #0d2f3f;
+  font-size: 14px;
+  white-space: nowrap;
+  position: absolute;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .line-2 {
+  position: absolute;
+  width: 430px;
+  height: 1px;
+  top: 319px;
+  left: 8px;
+}
+
+.frame .overlap-group-6 {
+  position: absolute;
+  width: 430px;
+  height: 157px;
+  top: 400px;
+  left: 8px;
+  border-radius: 8px;
+}
+
+.frame .text-wrapper-21 {
+  position: absolute;
+  width: 127px;
+  top: 15px;
+  left: 19px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--gray-1);
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.frame .rectangle-12 {
+  position: absolute;
+  width: 430px;
+  height: 157px;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: #a5a5a5;
+}
+
+.frame .group-12 {
+  position: absolute;
+  width: 433px;
+  height: 29px;
+  top: 346px;
+  left: 8px;
+}
+
+.frame .text-wrapper-22 {
+  position: absolute;
+  width: 125px;
+  top: 0;
+  left: 0;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #0d2f3f;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.frame .line-3 {
+  position: absolute;
+  width: 431px;
+  height: 1px;
+  top: 29px;
+  left: 0;
+}
+
+.frame .group-13 {
+  position: absolute;
+  width: 431px;
+  height: 19px;
+  top: 568px;
+  left: 10px;
+}
+
+.frame .SAVE-MY-NAME-EMAIL {
+  position: absolute;
+  width: 404px;
+  top: 0;
+  left: 25px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--gray-1);
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.frame .rectangle-13 {
+  position: absolute;
+  width: 20px;
+  height: 15px;
+  top: 4px;
+  left: 0;
+  border-radius: 6px;
+  border: 1px solid;
+  border-color: #a5a5a5;
+}
+
+.frame .text-wrapper-23 {
+  position: absolute;
+  width: 220px;
+  top: 3px;
+  left: 8px;
+  font-family: "Barlow-Medium", Helvetica;
+  font-weight: 500;
+  color: #0d2f3f;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.frame .text-wrapper-24 {
+  position: absolute;
+  width: 136px;
+  top: 26px;
+  left: 60px;
+  font-family: "Barlow-Medium", Helvetica;
+  font-weight: 500;
+  color: #0d2f3f;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.frame .text-wrapper-25 {
+  position: absolute;
+  width: 125px;
+  top: 93px;
+  left: 60px;
+  font-family: "Barlow-Medium", Helvetica;
+  font-weight: 500;
+  color: #0d2f3f;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.frame .text-wrapper-26 {
+  position: absolute;
+  width: 168px;
+  top: 156px;
+  left: 60px;
+  font-family: "Barlow-Medium", Helvetica;
+  font-weight: 500;
+  color: #0d2f3f;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.frame .text-wrapper-27 {
+  position: absolute;
+  width: 379px;
+  top: 53px;
+  left: 60px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--gray-1);
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.frame .text-wrapper-28 {
+  width: 378px;
+  top: 117px;
+  position: absolute;
+  left: 60px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--gray-1);
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.frame .text-wrapper-29 {
+  width: 379px;
+  top: 182px;
+  position: absolute;
+  left: 60px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--gray-1);
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.frame .date-may {
+  position: absolute;
+  width: 135px;
+  top: 34px;
+  left: 302px;
+  font-family: "Roboto-Medium", Helvetica;
+  font-weight: 500;
+  color: transparent;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.frame .span {
+  color: #0d2f3f;
+}
+
+.frame .text-wrapper-30 {
+  color: #000000;
+}
+
+.frame .text-wrapper-31 {
+  color: #286f6c;
+}
+
+.frame .date-may-2 {
+  width: 129px;
+  top: 101px;
+  position: absolute;
+  left: 302px;
+  font-family: "Roboto-Medium", Helvetica;
+  font-weight: 500;
+  color: transparent;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.frame .date-may-3 {
+  width: 136px;
+  top: 164px;
+  position: absolute;
+  left: 302px;
+  font-family: "Roboto-Medium", Helvetica;
+  font-weight: 500;
+  color: transparent;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.frame .image-4 {
+  position: absolute;
+  width: 39px;
+  height: 30px;
+  top: 34px;
+  left: 8px;
+  object-fit: cover;
+}
+
+.frame .image-5 {
+  width: 39px;
+  height: 30px;
+  top: 99px;
+  left: 8px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.frame .image-6 {
+  width: 39px;
+  height: 30px;
+  top: 163px;
+  left: 8px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.frame .group-14 {
+  position: absolute;
+  width: 174px;
+  height: 32px;
+  top: 614px;
+  left: 8px;
+  background-color: var(--secondary-color);
+  border-radius: 4px;
+}
+
+.frame .group-15 {
+  position: relative;
+  width: 153px;
+  height: 18px;
+  top: 4px;
+  left: 12px;
+}
+
+.frame .text-wrapper-32 {
+  position: absolute;
+  width: 104px;
+  top: 0;
+  left: 0;
+  font-family: "Rubik-Medium", Helvetica;
+  font-weight: 500;
+  color: #0d2f3f;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.frame .vuesax-linear-send {
+  position: absolute;
+  width: 15px;
+  height: 12px;
+  top: 6px;
+  left: 136px;
+}
+
+.frame .hotel-3 {
+  position: absolute;
+  width: 195px;
+  height: 84px;
+  top: 655px;
+  left: 0;
+}
+
+.frame .image-7 {
+  width: 94px;
+  height: 84px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+}
+
+.frame .overlap-9 {
+  position: absolute;
+  width: 751px;
+  height: 143px;
+  top: 0;
+  left: 0;
+}
+
+.frame .rectangle-14 {
+  position: absolute;
+  width: 751px;
+  height: 116px;
+  top: 0;
+  left: 0;
+  background-color: #003580;
+}
+
+.frame .group-16 {
+  position: absolute;
+  width: 242px;
+  height: 31px;
+  top: 12px;
+  left: 455px;
+}
+
+.frame .overlap-10 {
+  position: absolute;
+  width: 53px;
+  height: 31px;
+  top: 0;
+  left: 0;
+}
+
+.frame .text-wrapper-33 {
+  width: 43px;
+  top: 1px;
+  left: 0;
+  font-family: "Blinker-Regular", Helvetica;
+  color: #f2f6fa;
+  font-size: 14.3px;
+  position: absolute;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .image-8 {
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  top: 0;
+  left: 32px;
+  object-fit: cover;
+}
+
+.frame .text-wrapper-34 {
+  position: absolute;
+  width: 175px;
+  top: 1px;
+  left: 63px;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #f2f6fa;
+  font-size: 14.3px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .text-wrapper-35 {
+  position: absolute;
+  width: 145px;
+  top: 6px;
+  left: 27px;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #f2f6fa;
+  font-size: 21.4px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .hub-pesquisa {
+  position: absolute;
+  width: 698px;
+  height: 60px;
+  top: 83px;
+  left: 27px;
+}
+
+.frame .overlap-11 {
+  position: relative;
+  height: 60px;
+}
+
+.frame .rectangle-15 {
+  position: absolute;
+  width: 698px;
+  height: 58px;
+  top: 0;
+  left: 0;
+  background-color: #feba02;
+  border-radius: 15.15px;
+  border: 0.89px solid;
+}
+
+.frame .hospedes {
+  position: absolute;
+  width: 203px;
+  height: 46px;
+  top: 5px;
+  left: 409px;
+}
+
+.frame .overlap-group-7 {
+  position: relative;
+  width: 201px;
+  height: 46px;
+  background-color: #f2f6fa;
+  border-radius: 8.91px;
+}
+
+.frame .vector {
+  position: absolute;
+  width: 15px;
+  height: 9px;
+  top: 20px;
+  left: 173px;
+}
+
+.frame .text-wrapper-36 {
+  position: absolute;
+  width: 132px;
+  top: 14px;
+  left: 6px;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14.3px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .data-4 {
+  position: absolute;
+  width: 210px;
+  height: 55px;
+  top: 5px;
+  left: 193px;
+}
+
+.frame .overlap-12 {
+  position: relative;
+  width: 208px;
+  height: 55px;
+}
+
+.frame .data-5 {
+  position: absolute;
+  width: 208px;
+  height: 46px;
+  top: 0;
+  left: 0;
+  background-color: #f2f6fa;
+  border-radius: 8.91px;
+}
+
+.frame .text-wrapper-37 {
+  position: absolute;
+  width: 195px;
+  top: 14px;
+  left: 8px;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14.3px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .cidade {
+  position: absolute;
+  width: 183px;
+  height: 46px;
+  top: 5px;
+  left: 5px;
+}
+
+.frame .overlap-13 {
+  position: relative;
+  width: 181px;
+  height: 46px;
+  background-color: #f2f6fa;
+  border-radius: 8.91px;
+}
+
+.frame .line-wrapper {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 20px;
+  left: 155px;
+  background-image: url(./img/line-1.svg);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.frame .line-4 {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.frame .text-wrapper-38 {
+  width: 101px;
+  top: 14px;
+  left: 18px;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14.3px;
+  position: absolute;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .pesquisar {
+  position: absolute;
+  width: 76px;
+  height: 48px;
+  top: 5px;
+  left: 617px;
+}
+
+.frame .overlap-14 {
+  position: relative;
+  width: 74px;
+  height: 48px;
+}
+
+.frame .pesquisar-2 {
+  position: absolute;
+  width: 74px;
+  height: 46px;
+  top: 0;
+  left: 0;
+  background-color: #009fe3;
+  border-radius: 8.91px;
+}
+
+.frame .text-wrapper-39 {
+  position: absolute;
+  width: 62px;
+  top: 14px;
+  left: 8px;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 14.3px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .profile {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 7px;
+  left: 693px;
+  background-color: #009fe3;
+  border-radius: 18px;
+  background-image: url(./img/image-5.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.frame .servios {
+  position: absolute;
+  width: 191px;
+  height: 22px;
+  top: 52px;
+  left: 31px;
+}
+
+.frame .overlap-15 {
+  position: absolute;
+  width: 93px;
+  height: 22px;
+  top: 0;
+  left: 50px;
+}
+
+.frame .pet-sitting {
+  position: absolute;
+  width: 56px;
+  height: 22px;
+  top: 0;
+  left: 0;
+}
+
+.frame .overlap-group-8 {
+  position: relative;
+  width: 54px;
+  height: 22px;
+}
+
+.frame .rectangle-16 {
+  position: absolute;
+  width: 41px;
+  height: 22px;
+  top: 0;
+  left: 0;
+  border-radius: 30px;
+  border: 1px solid;
+  border-color: #f2f6fa;
+}
+
+.frame .text-wrapper-40 {
+  position: absolute;
+  width: 48px;
+  top: 5px;
+  left: 6px;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.frame .treino {
+  position: absolute;
+  width: 43px;
+  height: 22px;
+  top: 0;
+  left: 50px;
+}
+
+.frame .overlap-16 {
+  position: relative;
+  width: 41px;
+  height: 22px;
+  border-radius: 30px;
+  border: 1px solid;
+  border-color: #f2f6fa;
+}
+
+.frame .text-wrapper-41 {
+  position: absolute;
+  width: 31px;
+  height: 6px;
+  top: 7px;
+  left: 6px;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.frame .treino-2 {
+  position: absolute;
+  width: 43px;
+  height: 22px;
+  top: 0;
+  left: 150px;
+}
+
+.frame .text-wrapper-42 {
+  width: 18px;
+  height: 6px;
+  top: 7px;
+  left: 11px;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 10px;
+  white-space: nowrap;
+  position: absolute;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .hotel-4 {
+  position: absolute;
+  width: 43px;
+  height: 22px;
+  top: 0;
+  left: 0;
+}
+
+.frame .overlap-17 {
+  position: relative;
+  width: 41px;
+  height: 22px;
+  background-color: #f2f6fa59;
+  border-radius: 30px;
+  border: 1px solid;
+  border-color: #f2f6fa;
+}
+
+.frame .text-wrapper-43 {
+  position: absolute;
+  width: 25px;
+  height: 6px;
+  top: 7px;
+  left: 7px;
+  font-family: "Alatsi-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.frame .cart-notification-wrapper {
+  position: absolute;
+  width: 33px;
+  height: 36px;
+  top: 37px;
+  left: 693px;
+}
+
+.frame .cart-notification {
+  height: 36px;
+}
+
+.frame .overlap-18 {
+  position: relative;
+  width: 35px;
+  height: 36px;
+}
+
+.frame .cart {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 6px;
+  left: 0;
+  background-color: #009fe3;
+  border-radius: 15px;
+}
+
+.frame .shopping-basket {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 7px;
+  left: 7px;
+}
+
+.frame .notification {
+  position: absolute;
+  width: 18px;
+  height: 16px;
+  top: 0;
+  left: 17px;
+}
+
+.frame .overlap-group-9 {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  background-color: #feba02;
+  border-radius: 8px;
+}
+
+.frame .text-wrapper-44 {
+  position: absolute;
+  top: 1px;
+  left: 5px;
+  font-family: "Rubik-Medium", Helvetica;
+  font-weight: 500;
+  color: #0d2f3f;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.frame .group-17 {
+  position: absolute;
+  width: 117px;
+  height: 87px;
+  top: 144px;
+  left: 36px;
+}
+
+.frame .text-wrapper-45 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--paragraph-color);
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.frame .text-wrapper-46 {
+  position: absolute;
+  height: 12px;
+  top: 1px;
+  left: 55px;
+  font-family: "Roboto-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #003580;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.frame .path {
+  position: absolute;
+  width: 6px;
+  height: 15px;
+  top: 72px;
+  left: 40px;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <div class="overlap-wrapper">
+        <div class="overlap">
+          <div class="hotel">
+            <div class="div">
+              <div class="overlap-group">
+                <div class="overlap-2">
+                  <div class="overlap-3">
+                    <div class="filtro">
+                      <div class="filtro-2">
+                        <img class="image" src="img/image-6.png" />
+                        <div class="overlap-4">
+                          <div class="data">
+                            <div class="overlap-group-2">
+                              <div class="data-2"></div>
+                              <div class="text-wrapper">sáb. 2 de dez.</div>
+                            </div>
+                            <div class="text-wrapper-2">Check-in</div>
+                            <img class="vuesax-outline" src="img/calendar-2.png" />
+                          </div>
+                          <div class="data-3">
+                            <div class="overlap-group-2">
+                              <div class="data-2"></div>
+                              <div class="text-wrapper">dom. 3 de dez.</div>
+                            </div>
+                            <div class="text-wrapper-2">Check-out</div>
+                          </div>
+                          <img class="group" src="img/group-1000004707.png" />
+                          <div class="preo">
+                            <div class="text-wrapper-3">Preço</div>
+                            <div class="group-wrapper">
+                              <div class="group-2">
+                                <div class="text-wrapper-4">1 noite</div>
+                                <div class="overlap-group-3">
+                                  <div class="text-wrapper-5">SPA</div>
+                                  <div class="text-wrapper-6">€40.00</div>
+                                </div>
+                                <div class="text-wrapper-7">€159.99</div>
+                                <div class="text-wrapper-8">€199.99</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="div-wrapper">
+                      <div class="group-3">
+                        <div class="overlap-5">
+                          <div class="rectangle"></div>
+                          <div class="group-4">
+                            <p class="p">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                              ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                              sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                              est laborum.
+                            </p>
+                            <div class="overlap-group-4">
+                              <img class="line" src="img/line-158.svg" />
+                              <div class="rectangle-2"></div>
+                            </div>
+                            <div class="text-wrapper-9">Description</div>
+                            <div class="text-wrapper-10">Facilities</div>
+                            <div class="text-wrapper-11">Services</div>
+                            <div class="text-wrapper-12">Review</div>
+                          </div>
+                          <img class="img" src="img/image-7.png" />
+                          <div class="text-wrapper-13">Hotel E Spa</div>
+                          <div class="group-5">
+                            <div class="group-6">
+                              <div class="rectangle-3"></div>
+                              <div class="rectangle-4"></div>
+                              <div class="rectangle-5"></div>
+                              <div class="rectangle-6"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="botao">
+                          <div class="botao-2">
+                            <div class="text-wrapper-14">Reserve</div>
+                            <img class="seta" src="img/seta-3.png" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <img class="star" src="img/star-1.svg" />
+                    <img class="star-2" src="img/star-2.svg" />
+                    <img class="star-3" src="img/star-3.svg" />
+                    <img class="star-4" src="img/star-4.svg" />
+                    <img class="star-5" src="img/star-5.svg" />
+                    <div class="overlap-group-wrapper">
+                      <div class="overlap-6">
+                        <div class="group-7">
+                          <div class="overlap-7">
+                            <img class="image-2" src="img/image-8.png" />
+                            <div class="rectangle-7"></div>
+                            <div class="text-wrapper-15">Pet Hotel</div>
+                            <div class="botao-wrapper">
+                              <div class="botao-3">
+                                <div class="overlap-group-5">
+                                  <div class="text-wrapper-16">Reserve</div>
+                                  <img class="seta-2" src="img/image.png" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="group-8">
+                              <div class="group-9">
+                                <div class="rectangle-8"></div>
+                                <div class="rectangle-9"></div>
+                                <div class="rectangle-10"></div>
+                                <div class="rectangle-11"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="group-10"><div class="text-wrapper-17">€70.50</div></div>
+                      </div>
+                    </div>
+                    <div class="hotel-2">
+                      <div class="overlap-6">
+                        <div class="group-7">
+                          <div class="overlap-7">
+                            <img class="image-3" src="img/image-9.png" />
+                            <div class="rectangle-7"></div>
+                            <div class="text-wrapper-15">Alojamento</div>
+                            <div class="botao-wrapper">
+                              <div class="botao-3">
+                                <div class="overlap-group-5">
+                                  <div class="text-wrapper-16">Reserve</div>
+                                  <img class="seta-2" src="img/seta-2.png" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="group-8">
+                              <div class="group-9">
+                                <div class="rectangle-8"></div>
+                                <div class="rectangle-9"></div>
+                                <div class="rectangle-10"></div>
+                                <div class="rectangle-11"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="group-10"><div class="text-wrapper-17">€45.99</div></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="group-11">
+                    <div class="overlap-8">
+                      <div class="text-wrapper-18">Resposta</div>
+                      <p class="text-wrapper-19">
+                        Your email address will not be published. Required fields are marked
+                      </p>
+                      <div class="text-wrapper-20">Nome</div>
+                      <img class="line-2" src="img/line-15.svg" />
+                      <div class="overlap-group-6">
+                        <div class="text-wrapper-21">Enter your comment</div>
+                        <div class="rectangle-12"></div>
+                      </div>
+                      <div class="group-12">
+                        <div class="text-wrapper-22">E-mail</div>
+                        <img class="line-3" src="img/line-14.svg" />
+                      </div>
+                      <div class="group-13">
+                        <p class="SAVE-MY-NAME-EMAIL">SAVE MY NAME, EMAIL, AND WEBSITE IN THIS BROWSER FOR</p>
+                        <div class="rectangle-13"></div>
+                      </div>
+                      <div class="text-wrapper-23">3 Comments available</div>
+                      <div class="text-wrapper-24">Warina Hossain</div>
+                      <div class="text-wrapper-25">Leslie Alexander</div>
+                      <div class="text-wrapper-26">Cameron Williamson</div>
+                      <p class="text-wrapper-27">
+                        The extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the
+                        theory of ethics, very popular during the Renaissance.
+                      </p>
+                      <p class="text-wrapper-28">
+                        The extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the
+                        theory of ethics, very popular during the Renaissance.
+                      </p>
+                      <p class="text-wrapper-29">
+                        The extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the
+                        theory of ethics, very popular during the Renaissance.
+                      </p>
+                      <p class="date-may">
+                        <span class="span">Date:</span>
+                        <span class="text-wrapper-30"> may</span>
+                        <span class="text-wrapper-31"> 20, 2023</span>
+                      </p>
+                      <p class="date-may-2">
+                        <span class="span">Date:</span>
+                        <span class="text-wrapper-30"> may</span>
+                        <span class="text-wrapper-31"> 20, 2023</span>
+                      </p>
+                      <p class="date-may-3">
+                        <span class="span">Date:</span>
+                        <span class="text-wrapper-30"> may</span>
+                        <span class="text-wrapper-31"> 20, 2023</span>
+                      </p>
+                      <img class="image-4" src="img/image-4.png" />
+                      <img class="image-5" src="img/image-3.png" />
+                      <img class="image-6" src="img/image-2.png" />
+                      <div class="group-14">
+                        <div class="group-15">
+                          <div class="text-wrapper-32">Post Comment</div>
+                          <img class="vuesax-linear-send" src="img/send.png" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="hotel-3">
+                  <div class="overlap-6">
+                    <div class="group-7">
+                      <div class="overlap-7">
+                        <img class="image-7" src="img/image-10.png" />
+                        <div class="rectangle-7"></div>
+                        <div class="text-wrapper-15">Hotel</div>
+                        <div class="botao-wrapper">
+                          <div class="botao-3">
+                            <div class="overlap-group-5">
+                              <div class="text-wrapper-16">Reserve</div>
+                              <img class="seta-2" src="img/seta.png" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="group-8">
+                          <div class="group-9">
+                            <div class="rectangle-8"></div>
+                            <div class="rectangle-9"></div>
+                            <div class="rectangle-10"></div>
+                            <div class="rectangle-11"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group-10"><div class="text-wrapper-17">€100.00</div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="overlap-9">
+                <div class="rectangle-14"></div>
+                <div class="group-16">
+                  <div class="overlap-10">
+                    <div class="text-wrapper-33">EUR</div>
+                    <img class="image-8" src="img/image-1.png" />
+                  </div>
+                  <div class="text-wrapper-34">Registe a sua propriedade</div>
+                </div>
+                <div class="text-wrapper-35">PetBooking</div>
+                <div class="hub-pesquisa">
+                  <div class="overlap-11">
+                    <div class="rectangle-15"></div>
+                    <div class="hospedes">
+                      <div class="overlap-group-7">
+                        <img class="vector" src="img/vector-2.svg" />
+                        <div class="text-wrapper-36">Cão:1 Adultos:2</div>
+                      </div>
+                    </div>
+                    <div class="data-4">
+                      <div class="overlap-12">
+                        <div class="data-5"></div>
+                        <p class="text-wrapper-37">sáb. 2 de dez. — dom. 3 de dez.</p>
+                      </div>
+                    </div>
+                    <div class="cidade">
+                      <div class="overlap-13">
+                        <div class="line-wrapper"><img class="line-4" src="img/line-2.svg" /></div>
+                        <div class="text-wrapper-38">Aveiro</div>
+                      </div>
+                    </div>
+                    <div class="pesquisar">
+                      <div class="overlap-14">
+                        <div class="pesquisar-2"></div>
+                        <div class="text-wrapper-39">Pesquisar</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile"></div>
+                <div class="servios">
+                  <div class="overlap-15">
+                    <div class="pet-sitting">
+                      <div class="overlap-group-8">
+                        <div class="rectangle-16"></div>
+                        <div class="text-wrapper-40">Pet Sit.</div>
+                      </div>
+                    </div>
+                    <div class="treino">
+                      <div class="overlap-16"><div class="text-wrapper-41">Treino</div></div>
+                    </div>
+                  </div>
+                  <div class="treino-2">
+                    <div class="overlap-16"><div class="text-wrapper-42">SPA</div></div>
+                  </div>
+                  <div class="hotel-4">
+                    <div class="overlap-17"><div class="text-wrapper-43">Hotel</div></div>
+                  </div>
+                </div>
+                <div class="cart-notification-wrapper">
+                  <div class="cart-notification">
+                    <div class="overlap-18">
+                      <div class="cart"><img class="shopping-basket" src="img/shopping-basket-filled.svg" /></div>
+                      <div class="notification">
+                        <div class="overlap-group-9"><div class="text-wrapper-44">1</div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="group-17">
+            <div class="text-wrapper-45">Go home</div>
+            <div class="text-wrapper-46">Hotel Details</div>
+            <img class="path" src="img/path-33.svg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
