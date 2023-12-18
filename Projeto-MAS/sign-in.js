@@ -11,22 +11,32 @@ $(document).ready(function() {
         });
 
         // Get the existing data from local storage
-        var existingData = JSON.parse(localStorage.getItem('accounts')) || {};
+        var existingData;
+        try {
+            existingData = JSON.parse(localStorage.getItem('accounts'));
+        } catch (error) {
+            console.error('Error parsing accounts from localStorage:', error);
+        }
+        if (!Array.isArray(existingData)) {
+            existingData = [];
+        }
 
         // Check if the email already exists
-        if (existingData['email'] === formData['email']) {
+        if (existingData.some(account => account.email === formData.email)) {
             alert('This email is already used.');
             return;
         }
 
-        // Convert the formData object to a JSON string
-        var json = JSON.stringify(formData);
+        // Add the new account to the existing data
+        existingData.push(formData);
+
+        // Convert the existingData array to a JSON string
+        var json = JSON.stringify(existingData);
 
         // Store the JSON string in local storage
         localStorage.setItem('accounts', json);
 
-        
-
         console.log(JSON.parse(localStorage.getItem('accounts')));
+        window.location.href = 'index.html';
     });
 });

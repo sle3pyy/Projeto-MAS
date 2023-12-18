@@ -1,5 +1,4 @@
-$(document).ready(function() {~
-    console.log(JSON.parse(localStorage.getItem('formData')));
+$(document).ready(function() {
     $('form').on('submit', function(event) {
         event.preventDefault(); // Prevent the form from submitting normally
 
@@ -13,14 +12,15 @@ $(document).ready(function() {~
         console.log(formData);
 
         // Get the existing data from local storage
-        var existingData = JSON.parse(localStorage.getItem('accounts')) || {};
+        var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
 
-        // Check if the email and password match the stored data
-        if (existingData['email'] !== formData['email'] || existingData['password'] !== formData['pass']) {
+        // Check if the email and password match any stored account
+        var account = existingData.find(account => account.email === formData.email && account.password === formData.pass);
+
+        if (!account) {
             alert('Invalid email or password.');
             return;
-        }
-        else if(existingData['email'] === formData['email'] && existingData['password'] === formData['pass']){
+        } else {
             alert('Welcome back!');
             // Set a flag in local storage to remember that the user is logged in
             localStorage.setItem('isLoggedIn', 'true');
