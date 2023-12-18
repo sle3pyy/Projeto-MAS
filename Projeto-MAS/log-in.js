@@ -23,7 +23,7 @@ $(document).ready(function() {
         } else {
             alert('Welcome back!');
             // Set a flag in local storage to remember that the user is logged in
-            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('loggedInEmail', formData.email);
         }
 
         // If the email and password match, you can proceed with the form submission
