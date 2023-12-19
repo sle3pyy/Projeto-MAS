@@ -1,6 +1,7 @@
 var vm= function(){
     var self = this;
     self.animals = ko.observableArray([]);
+    self.petPhotos = ko.observableArray([]);
 
     // Check if the user is logged in
     if (localStorage.getItem('loggedInEmail')) {
@@ -12,13 +13,16 @@ var vm= function(){
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
 
         // Find the logged-in account
-        var account = existingData.find(account => account.email === self.loggedInEmail);
+        var account = existingData
 
         if (account && account.animals) {
             // Set the animals observable to the animals array of the account
             self.animals(account.animals);
-        }
 
+        }
+        
+        // Get the image data from localStorage
+        
         console.log('Logged in!');
         console.log(self.animals())
     }

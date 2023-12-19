@@ -7,10 +7,33 @@ $(document).ready(function() {
 
         // Iterate over each input field in the form
         $(this).find('input').each(function() {
-            // Add the input field's id as the key and its value as the value to the formData object
-            formData[$(this).attr('id')] = $(this).val();
+            // If the input field is a file input
+            if (this.type === 'file') {
+                // Get the first file from the files property
+                var file = this.files[0];
+        
+                if (file) {
+                    // Create a new FileReader object
+                    var reader = new FileReader();
+                
+                    // Store a reference to the file input element
+                    var fileInput = $(this);
+                
+                    // Read the file as a data URL
+                    reader.readAsDataURL(file);
+                
+                    // When the file is loaded
+                    reader.onload = function(e) {
+                        // Store the image data in formData using the stored reference to the file input element
+                        formData[$(this).attr('id')] = e.target.result;
+                
+                    };
+                }
+            } else {
+                // Add the input field's id as the key and its value as the value to the formData object
+                formData[$(this).attr('id')] = $(this).val();
+            }
         });
-
         // Get the existing data from local storage
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
 
@@ -35,6 +58,7 @@ $(document).ready(function() {
         if (!account.animals) {
             account.animals = [];
         }
+        
         account.animals.push(formData);
 
         // Store the updated accounts back in local storage
@@ -43,6 +67,7 @@ $(document).ready(function() {
         console.log(account)
         console.log(JSON.parse(localStorage.getItem('accounts')));
     });
+
     $('#clearAnimals').on('click', function() {
         // Get the existing data from local storage
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
@@ -67,6 +92,9 @@ $(document).ready(function() {
         console.log(account);
         console.log(JSON.parse(localStorage.getItem('accounts')));
     });
+    $('#clearImages').on('click', function() {
+        localStorage.removeItem('uploadedImage')
+        ;});
     $('#logAccounts').on('click', function() {
         // Get the existing data from local storage
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];

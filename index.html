@@ -12,36 +12,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="myCSS.css" />
-   <style>
-    .carousel-item {
-        height:50vh;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-radius: 25px;
-    }
-
-        .carousel-item:nth-child(1) {
-            background-image: url('https://imgflip.com/s/meme/Cute-Cat.jpg');
-        }
-
-        .carousel-item:nth-child(2) {
-            background-image: url('https://i.ytimg.com/vi/YBqJgQuutYc/maxresdefault.jpg');
-        }
-
-        .carousel-item:nth-child(3) {
-            background-image: url('https://i.pinimg.com/200x/e0/75/93/e07593fcb3ea911b61e4801d10345efc.jpg');
-        }
-
-        .carousel-item:nth-child(4) {
-            background-image: url('https://media.discordapp.net/attachments/1180576288730263716/1181661389249589288/WhatsApp_Image_2023-12-05_at_18.17.48.jpeg?ex=6581deed&is=656f69ed&hm=c9b431e9ae129c027b2a8a44bbe62668f9740d0320ac41425dca17751a96f844&=&format=webp&width=419&height=467');
-        }
-
-        .carousel-item:nth-child(5) {
-            background-image: url('https://cdn.discordapp.com/attachments/1180576288730263716/1181661388926619678/WhatsApp_Image_2023-12-05_at_18.15.08.jpeg?ex=658');
-        }
+    <style>
         
-</style>
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg fixed-top">
@@ -70,13 +43,11 @@
     <div class="container-sm" style="position: relative; top: 200px;" >
         <div class="row">
         <div id="myCarousel" class="carousel slide carousel-fade mb-5 col-4 align-self-start" data-bs-ride="carousel" data-bs-interval="10000">
-            <div class="carousel-inner">
-                <div class="carousel-item active"></div>
-                <div class="carousel-item"></div>
-                <div class="carousel-item"></div>
-                <div class="carousel-item"></div>
-                <div class="carousel-item"></div>
-            </div>
+            <div class="carousel-inner" >
+                <div class="carousel-item active " data-bind="foreach: animals">
+                  <img data-bind="attr:{src:undefined}"class="d-block w-100" alt="...">
+                </div>
+              </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -90,7 +61,7 @@
             <div data-bind="foreach:animals">
                 <h3 style="height:73%" data-bind="text:'Your pet ' + name + ' is dead'"></h3>
             </div>
-            <button type="button" class="btn btn-primary pull-right sticky-bottom" id="" href="">ver pet</button>
+            <button type="button" class="btn btn-primary pull-right" id="" href="">ver pets</button>
         </div>
         </div>
         
