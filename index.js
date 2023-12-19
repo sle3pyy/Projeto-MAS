@@ -2,19 +2,20 @@ var vm= function(){
     var self = this;
     self.animals = ko.observableArray([]);
     self.petPhotos = ko.observableArray([]);
+    self.loggedInEmail = localStorage.getItem('loggedInEmail');
+    console.log(self.loggedInEmail);
+    
 
     // Check if the user is logged in
     if (localStorage.getItem('loggedInEmail')) {
         $('a[href="log-in.html"]').html('<i class="fas fa-user"></i>').attr('href', 'petReg.html');
         $('a[href="sign-in.html"]').text('Log out').attr('href', 'index.html').attr('id', 'logout');
-        self.loggedInEmail = localStorage.getItem('loggedInEmail');
+        
 
-        // Get the existing data from local storage
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
 
         // Find the logged-in account
-        var account = existingData
-
+        var account = existingData.find(account => account.email === self.loggedInEmail);
         if (account && account.animals) {
             // Set the animals observable to the animals array of the account
             self.animals(account.animals);
