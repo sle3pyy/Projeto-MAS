@@ -13,17 +13,11 @@ var vm= function(){
         
 
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
-
-        // Find the logged-in account
         var account = existingData.find(account => account.email === self.loggedInEmail);
         if (account && account.animals) {
-            // Set the animals observable to the animals array of the account
             self.animals(account.animals);
 
         }
-        
-        // Get the image data from localStorage
-        
         console.log('Logged in!');
         console.log(self.animals())
     }
@@ -32,9 +26,9 @@ var vm= function(){
     }
 
     $('#logout').on('click', function(event) {
-        event.preventDefault(); // Prevent the form from submitting normally
+        event.preventDefault();
         localStorage.removeItem('loggedInEmail');
-        window.location.href = 'index.html'; // Replace with your actual homepage URL
+        window.location.href = 'index.html'; 
     });}
 
 
