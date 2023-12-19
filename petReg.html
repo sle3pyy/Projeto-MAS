@@ -31,9 +31,52 @@
     <div class="container" style="position: relative; top: 80px; bottom:  100px;">
         <main role="main" class="pb-3">
             <div class="border-bottom pt-4 pb-2 mb-3">
+                    <h2 class="text-center mb-4">Informação do utlizador</h2>
+            </div>
+            <div class="p-3 py-5">
+                <div class="row mt-2">
+                    <div class="col-md-6"><label class="labels">Name</label><input  data-bind="value:name"type="text" class="form-control" value="" readonly></div>
+                    <div class="col-md-6"><label class="labels">Surname</label><input data-bind="value:apelido"type="text" class="form-control" value="" placeholder="surname" readonly></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Mobile Number</label><input data-bind="value:telefone" type="text" class="form-control"   readonly></div>
+                    <div class="col-md-12"><label class="labels">E-mail</label><input data-bind="value:email" type="text" class="form-control" value="" readonly></div>
+                    <div class="col-md-12"><label class="labels">NIF</label><input data-bind="value:nif" type="text" class="form-control" value="" readonly></div>
+                    <div class="col-md-3">
+                        <label for="rua" class="form-label">Rua</label>
+                        <input data-bind="value:rua" type="text" class="form-control" readonly>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="cidade" class="form-label">Cidade</label>
+                        <input data-bind="value:cidade" type="text" class="form-control" readonly>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="distrito" class="form-label">Distrito</label>
+                        <input data-bind="value:Distrito" type="text" class="form-control" readonly>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="cp" class="form-label">Código Postal</label>
+                        <div class="d-flex align-items-center">
+                            <input data-bind="value:cp1"type="text" class="form-control" readonly>
+                            <span style="margin-right: 0.5em;">-</span>
+                            <input data-bind="value:cp2" type="text" class="form-control" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-bind="foreach: animals">
+                <div>
+                    <h3 data-bind="text: name"></h3>
+                    <p>Age: <span data-bind="text: Age"></span></p>
+                    <p>Race: <span data-bind="text: Race"></span></p>
+                    <p>Weight: <span data-bind="text: Weight"></span></p>
+                    <p>Type: <span data-bind="text: animalType"></span></p>
+                </div>
+            </div>
+            <div class="border-bottom pt-4 pb-2 mb-3">
                 <div class="row">
-        <!-- Título do formulário -->
-        <h2 class="text-center mb-4">Adicionar Animal</h2>
+                    <h2 class="text-center mb-4">Adicionar Animal</h2>
                 </div>
             </div>
 
@@ -79,7 +122,6 @@
             </div>
             <button id="clearAnimals">Clear Animals</button>
             <button id="logAccounts">Log Accounts</button>
-            <button id="clearImages">Clear Images</button>
             <button id="clearAccountsButton">Clear Accounts</button>
 
             <!-- Botão de Submissão -->
