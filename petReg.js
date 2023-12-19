@@ -1,4 +1,8 @@
-$(document).ready(function() {
+var vm= function(){
+    var self = this;
+    self.animals = ko.observableArray([]);
+    self.account = ko.observableArray([]);
+
     $('form').on('submit', function(event) {
         console.log()
         event.preventDefault();
@@ -11,29 +15,33 @@ $(document).ready(function() {
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
         var loggedInEmail = localStorage.getItem('loggedInEmail');
         var account = existingData.find(account => account.email === loggedInEmail);
-
+        self.account(account);
+        self.animals(account.animals);
+    
         if (!account) {
             alert('No logged-in account found.');
             return;
         }
-
+    
         if (account.animals && account.animals.some(animal => animal.name === formData.name)) {
             alert('An animal with this name already exists.');
             return;
         }
-
+    
         if (!account.animals) {
             account.animals = [];
         }
         
         account.animals.push(formData);
-
+    
         localStorage.setItem('accounts', JSON.stringify(existingData));
-
+    
         console.log(account)
         console.log(JSON.parse(localStorage.getItem('accounts')));
     });
-});
+
+
+}
 
     $('#clearAnimals').on('click', function() {
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
@@ -61,3 +69,12 @@ $(document).ready(function() {
         localStorage.removeItem('accounts');
         console.log('Accounts data has been cleared from localStorage.');
     });
+    $(document).ready(function() {
+        var viewModel = new vm();
+        ko.applyBindings(viewModel);
+
+        var loggedInEmail = localStorage.getItem('loggedInEmail');
+        var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
+        var account = existingData.find(account => account.email === loggedInEmail);
+        console.log(account)
+    });    
