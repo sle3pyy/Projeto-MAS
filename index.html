@@ -40,6 +40,7 @@
             </div>
         </div>
     </nav>
+    <!-- ko if: animals().length > 0 -->
     <div class="container-sm" style="position: relative; top: 200px;" >
         <div class="row">
         <div id="myCarousel" class="carousel slide carousel-fade mb-5 col-4 align-self-start" data-bs-ride="carousel" data-bs-interval="10000">
@@ -66,6 +67,10 @@
         </div>
         
     </div>
+    <!-- /ko -->
+    <!-- ko if: animals().lenght <= 0 -->
+    <h1 style="align-self: center;">Registe o seu pet </h1>
+    <!-- /ko -->
     <div class="container" style="position: relative; top: 190px;">
         <h4>HOTEL</h4>
         <div class="row">
