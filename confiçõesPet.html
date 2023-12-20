@@ -41,34 +41,9 @@
       margin-bottom: 20px;
     }
 
-    .rating {
-      display: inline-flex;
-      flex-direction: row-reverse; /* Mudança para inverter a direção */
-    }
+    
+   
 
-    .detail-title {
-        cursor: pointer;
-        border-bottom: 2px solid transparent;
-    }
-
-    .detail-title.selected {
-        border-color: #007bff;
-    }
-    .rating {
-    font-size: 24px;
-}
-
-.star {
-    display: inline-block;
-    cursor: pointer;
-    color: #ddd;
-    transition: color 0.2s;
-    margin-right: 5px;
-}
-
-.star.selected {
-    color: #ffc107; /* Cor amarela para estrelas selecionadas */
-}
       </style>
 </head>
 <body class="pt-5 pb-5"> 
@@ -172,204 +147,96 @@
         </form>
       </div>
       <br/>
-      <!--hoteis-->
+      <!--info-->
       <div class="container main-content " >
-      <div class="row">
-        <!-- Retângulo Amarelo com Mapa e Filtros -->
-        <div class="col-md-4">
-          <div class="yellow-box">
-              <!-- Mapa (substitua este conteúdo pelo seu mapa real) -->
-              <div style="height: 300px; background-color: #ccc;">Mapa</div>
-      
-              <!-- Filtros -->
-              <div class="row mt-3">
-                  <div class="col-md-6">
-                      <label for="preco" class="form-label">Filtrar por Preço:</label>
-                      <input type="range" class="form-range" id="preco" min="0" max="1000" step="50">
-                  </div>
-                  <div class="col-md-6">
-                      <label for="ratings" class="form-label">Filtrar por Ratings:</label>
-                      <div class="rating">
-                          <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 estrelas"></label>
-                          <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 estrelas"></label>
-                          <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 estrelas"></label>
-                          <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 estrelas"></label>
-                          <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 estrela"></label>
-                      </div>
-                  </div>
-              </div>
-      
-              <!-- Caixas de texto para as datas -->
-              <div class="row mt-3">
-                  <div class="col-md-6">
-                      <label for="checkin" class="form-label">Check-In:</label>
-                      <input type="text" class="form-control rounded" id="checkin" readonly>
-                  </div>
-                  <div class="col-md-6">
-                      <label for="checkout" class="form-label">Check-Out:</label>
-                      <input type="text" class="form-control rounded" id="checkout" readonly>
-                  </div>
-              </div>
-      
-              <!-- Caixa de texto para os preços -->
-              <div class="row mt-3">
-                  <div class="col-md-12">
-                      <label for="precos" class="form-label">Preços:</label>
-                      <textarea class="form-control rounded" id="precos" readonly></textarea>
-                  </div>
-              </div>
-      
-          </div>
-          <!-- Cards Horizontais -->
-<div class="row mt-3">
-  <!-- Exemplo de Card Horizontal de Hotel (pode replicar conforme necessário) -->
       <div class="card mb-3">
-          <div class="row g-0">
-              <div class="col-md-4">
-                  <img src="https://via.placeholder.com/75" class="img-fluid rounded-start" alt="Imagem do Hotel">
-              </div>
-              <div class="col-md-8">
-                  <div class="card-body">
-                      <h6 class="card-title">Nome do Hotel</h6>
-                      <p class="card-text">Preço: $80/noite</p>
-                      <p class="card-text">Avaliação: 4 estrelas</p>
-                      <a href="#" class="btn btn-primary">Ver Detalhes</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-  <!-- Fim do Exemplo de Card Horizontal de Hotel -->
-
-  <!-- Adicione mais cards horizontais conforme necessário -->
-</div>
-<!-- Fim dos Cards Horizontais -->
-      </div>
-  
-<!-- Fim dos Cards Horizontais -->
-      <!-- Lista de Cards de Hotéis -->
-<div class="col-md-8">
-  <!-- Exemplo de Layout de Hotel (você pode replicar isso dinamicamente com dados reais) -->
-  <div class="row">
-      <!-- Carrossel de Imagens -->
-      <div class="col-md-12 mb-3">
-          <div class="card">
-              <div id="hotelCarousel" class="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-inner">
-                      <div class="carousel-item active">
-                          <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="Imagem 1">
-                      </div>
-                      <!-- Adicione mais imagens conforme necessário -->
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#hotelCarousel" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Anterior</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#hotelCarousel" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Próximo</span>
-                  </button>
-              </div>
-              <div class="card-body">
-                <h2 class="card-title">Nome do Hotel</h2>
-                <p class="card-text">Avaliação: 4 estrelas</p>
+        <div class="row g-0">
+            <!-- Imagem à esquerda -->
+            <div class="col-md-4">
+                <img src="caminho/para/sua/imagem.jpg" alt="Imagem do Animal" class="img-fluid">
             </div>
-          </div>
-      </div>
-      <!-- Fim do Carrossel de Imagens -->
-
-      <!-- Detalhes do Hotel -->
-      <div class="col-md-12">
-        <div class="card">
-            <div class="card-body">
-                <!-- Títulos clicáveis -->
-                <div class="d-flex">
-                    <div class="me-3">
-                        <h4 class="detail-title" onclick="showDetail('descricao')">Descrição</h4>
-                    </div>
-                    <div class="me-3">
-                        <h4 class="detail-title" onclick="showDetail('instalacoes')">Instalações</h4>
-                    </div>
-                    <div>
-                        <h4 class="detail-title" onclick="showDetail('servicos')">Serviços</h4>
-                    </div>
-                </div>
-                
-    
-                <!-- Conteúdo dinâmico -->
-                <div id="descricao" class="detail-content">
-                    <p>Texto da descrição do hotel.</p>
-                </div>
-                <div id="instalacoes" class="detail-content" style="display: none;">
-                    <p>Texto sobre as instalações do hotel.</p>
-                </div>
-                <div id="servicos" class="detail-content" style="display: none;">
-                    <p>Texto sobre os serviços oferecidos pelo hotel.</p>
+            <!-- Informações do animal à direita -->
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Nome do Animal</h5>
+                    <p class="card-text">Tipo: Cão</p>
+                    <p class="card-text">Quantidade: 2</p>
+                    <p class="card-text">Descrição: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <!-- Adicione mais informações conforme necessário -->
                 </div>
             </div>
         </div>
     </div>
-      <!-- Fim dos Detalhes do Hotel -->
-
- <!-- Secção de Comentários -->
-<div class="col-md-12 mt-3">
-  <div class="card">
-      <div class="card-body">
-          <h3 class="card-title">Comentários</h3>
-
-          <!-- Exemplos de Comentários -->
-          <div class="comment">
-              <h5>Usuário 1</h5>
-              <p class="comment-text">Comentário interessante e informativo. Gostei muito da minha estadia.</p>
-              <div class="rating" data-rating="4"></div>
-          </div>
-
-          <div class="comment">
-              <h5>Usuário 2</h5>
-              <p class="comment-text">O hotel é ótimo, mas o serviço poderia ser melhor.</p>
-              <div class="rating" data-rating="3"></div>
-          </div>
-
-          <div class="comment">
-              <h5>Usuário 3</h5>
-              <p class="comment-text">Experiência maravilhosa! Altamente recomendado.</p>
-              <div class="rating" data-rating="5"></div>
-          </div>
-          <!-- Fim dos Exemplos de Comentários -->
-
-          <!-- Formulário para Novo Comentário -->
-          <form id="commentForm" class="mt-3">
-              <h4>Deixe um Comentário</h4>
-              <div class="mb-3">
-                  <label for="name">Nome:</label>
-                  <input type="text" class="form-control" id="name" required>
-              </div>
-              <div class="mb-3">
-                  <label for="email">E-mail:</label>
-                  <input type="email" class="form-control" id="email" required>
-              </div>
-              <div class="mb-3">
-                  <label for="commentText">Comentário:</label>
-                  <textarea class="form-control" id="commentText" rows="3" required></textarea>
-              </div>
-              <div class="mb-3">
-                  <label for="rating">Avaliação:</label>
-                  <div class="rating" id="newRating" data-rating="0">
-                      <span class="star" data-star="5">&#9733;</span>
-                      <span class="star" data-star="4">&#9733;</span>
-                      <span class="star" data-star="3">&#9733;</span>
-                      <span class="star" data-star="2">&#9733;</span>
-                      <span class="star" data-star="1">&#9733;</span>
-                  </div>
-                  <input type="hidden" name="rating" id="hiddenRating">
-              </div>
-              <button type="submit" class="btn btn-primary">Enviar Comentário</button>
-          </form>
-          <!-- Fim do Formulário para Novo Comentário -->
-
-      </div>
-  </div>
-</div>
-<!-- Fim da Secção de Comentários -->
+    <!-- Seção com informações sobre o animal no alojamento -->
+    <div class="row mt-4">
+        <!-- Lado Esquerdo -->
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Estado do Animal no Alojamento</h3>
+                    <p><strong>Alimentação:</strong> Já almoçou</p>
+                    <p><strong>Comportamento:</strong> Dócil</p>
+                    <!-- Adicione mais informações conforme necessário -->
+                </div>
+            </div>
+    
+            <!-- Seção de Mensagens -->
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h3 class="card-title">Mensagens para o Dono do Alojamento</h3>
+                    
+                    <!-- Lista de Mensagens -->
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Assunto:</strong> Reservas para o próximo mês
+                            <p>Mensagem: Olá, gostaria de fazer reservas para o próximo mês. Obrigado!</p>
+                        </li>
+                        <!-- Adicione mais mensagens conforme necessário -->
+                    </ul>
+                    
+                    <!-- Formulário para Nova Mensagem -->
+                    <form class="mt-3">
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Assunto:</label>
+                            <input type="text" class="form-control" id="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensagem:</label>
+                            <textarea class="form-control" id="message" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                    </form>
+                    <!-- Fim do Formulário para Nova Mensagem -->
+                </div>
+            </div>
+        </div>
+    
+        <!-- Lado Direito -->
+        <div class="col-md-4">
+            <!-- Card do Hotel -->
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Imagem do Hotel">
+                <div class="card-body">
+                    <h5 class="card-title">Nome do Hotel</h5>
+                </div>
+            </div>
+    
+            <!-- Últimas Mensagens -->
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">Últimas Mensagens</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Assunto:</strong> Reservas para o próximo mês
+                            <p>Mensagem: Olá, gostaria de fazer reservas para o próximo mês. Obrigado!</p>
+                        </li>
+                        <!-- Adicione mais mensagens conforme necessário -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 
   </div>
 </div>
@@ -474,42 +341,7 @@
       }
     });
 
-    // detalhes hotel
-    function showDetail(detailId) {
-        // Esconde todos os detalhes
-        document.querySelectorAll('.detail-content').forEach(function (detail) {
-            detail.style.display = 'none';
-        });
 
-        // Mostra o detalhe selecionado
-        document.getElementById(detailId).style.display = 'block';
-
-        // Remove a classe 'selected' de todos os títulos
-        document.querySelectorAll('.detail-title').forEach(function (title) {
-            title.classList.remove('selected');
-        });
-
-        // Adiciona a classe 'selected' ao título clicado
-        document.getElementById(detailId + '-title').classList.add('selected');
-    }
-
-    // comentarios
-    document.addEventListener("DOMContentLoaded", function () {
-    const stars = document.querySelectorAll(".star");
-    const hiddenRating = document.getElementById("hiddenRating");
-
-    stars.forEach(star => {
-        star.addEventListener("click", () => {
-            const selectedStar = parseInt(star.dataset.star);
-            hiddenRating.value = selectedStar;
-
-            stars.forEach(s => {
-                const starValue = parseInt(s.dataset.star);
-                s.classList.toggle("selected", starValue <= selectedStar);
-            });
-        });
-    });
-});
     
     </script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>

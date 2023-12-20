@@ -61,7 +61,7 @@
           }
     </style>
   </head>
-  <body>
+  <body class="pt-5 pb-5">
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html" tabindex="petbooking"><img src="https://cdn.discordapp.com/attachments/1180576288730263716/1180576315015962655/image.png?ex=657dec5f&is=656b775f&hm=6629b5d5bce580488c9a3a0384a4ca4141c00ccc303a7a9f670edb596ac34fe3&" height="24" /></a>
@@ -86,86 +86,106 @@
             </div>
         </div>
     </nav>
-    <form>
-    <div style="height:50px"></div>
-    <div class="container">
-    <div class="row ">
-        <div class="col-9 ">
-        <div class="cardz">
-        <form action="reservation.php" method="post"></form>
-          <div class="elem-group">
-            <label for="card_type">Tipo de cartão</label>
-              <select name="card_type" id="card_type" required="">
-                <option value="">---seleciona o tipo de cartão--</option>
-                <option value="visa">Visa</option>
-                <option value="rupy">Rupay</option>
-                <option value="master card">Master Card</option>        
-              </select>    
-            </div>
-            <div class="elem-group">
-                <label for="Card Number">Número do cartão</label>
-                <input type="number" name="card Number" id="Card Number" required="">
-            </div>
-            <div class="elem-group">
-            <label for="exp_date">Data de expirção</label>
-              <input type="date" name="exp_date" id="exp_date" required="">
-            </div>
-            <div class="elem-group">
-                <label for="exp_date">Data de expirção</label>
-                <input type="password" name="CVV" id="CVV" required="">
-            </div>
-            <input type="submit" name="" id="" value="Pay Now" />           
-    <div style="height:50px"></div>
-    </form>
-        </div></div>
-
-    <div class="col-3 " style="float:right">
-      <div class="cardz">
-      <div class="elem-group">
-      <label for="imgh" >Hotel e spa</label>
-      <img src="https://i.kym-cdn.com/entries/icons/original/000/046/895/huh_cat.jpg" class="img-fluid rounded float-start" id="imgh">
+    <br/>
+    <form action="reservation.php" method="post">
+      <div class="container">
+          <div class="row">
+  
+              <!-- Seção do Formulário -->
+              <div class="col-md-9">
+                  <div class="card">
+                      <div class="card-body">
+  
+                          <!-- Tipo de Cartão -->
+                          <div class="elem-group">
+                              <label for="card_type">Tipo de cartão</label>
+                              <select name="card_type" id="card_type" required="">
+                                  <option value="">---seleciona o tipo de cartão---</option>
+                                  <option value="visa">Visa</option>
+                                  <option value="rupy">Rupay</option>
+                                  <option value="master card">Master Card</option>
+                              </select>
+                          </div>
+  
+                          <!-- Número do Cartão -->
+                          <div class="elem-group">
+                              <label for="card_number">Número do cartão</label>
+                              <input type="number" name="card_number" id="card_number" required="">
+                          </div>
+  
+                          <!-- Data de Expiração -->
+                          <div class="elem-group">
+                              <label for="exp_date">Data de expiração</label>
+                              <input type="date" name="exp_date" id="exp_date" required="">
+                          </div>
+  
+                          <!-- CVV -->
+                          <div class="elem-group">
+                              <label for="cvv">CVV</label>
+                              <input type="password" name="cvv" id="cvv" required="">
+                          </div>
+  
+                          <!-- Botão de Pagamento -->
+                          <input type="submit" class="btn btn-primary" name="" id="" value="Pay Now" />
+                      </div>
+                  </div>
+              </div>
+  
+              <!-- Seção das Informações do Hotel -->
+              <div class="col-md-3" style="float:right">
+                  <div class="card">
+  
+                      <!-- Imagem do Hotel -->
+                      <img src="https://i.kym-cdn.com/entries/icons/original/000/046/895/huh_cat.jpg" class="card-img-top" alt="Imagem do Hotel">
+  
+                      <div class="card-body">
+  
+                          <!-- Detalhes do Preço -->
+                          <h5 class="card-title">Preço</h5>
+                          <div class="elem-group" style="background-color: rgba(210,210,210,1); border-radius: 15px">
+                              <div class="elem-group inlined">
+                                  <h5 style="float:left">1 noite</h5>
+                              </div>
+                              <div class="elem-group inlined">
+                                  <h5 style="float:right">159.99€</h5>
+                              </div>
+                              <div class="elem-group inlined">
+                                  <h5 style="float:left">SPA</h5>
+                              </div>
+                              <div class="elem-group inlined">
+                                  <h5 style="float:right">40€</h5>
+                              </div>
+                              <div class="elem-group inlined">
+                                  <h5 style="float:left">Total:</h5>
+                              </div>
+                              <div class="elem-group inlined">
+                                  <h5 style="float:right">199.99€</h5>
+                              </div>
+                          </div>
+  
+                          <!-- Botão de Reserva -->
+                          <div class="elem-group mt-3">
+                              <a href="#" class="btn btn-default"></a>
+                          </div>
+                      </div>
+                  </div>
+  
+                  <!-- Política de Cancelamento -->
+                  <div class="card mt-3">
+                      <div class="card-body">
+                          <h3 class="card-title">Cancelamento</h3>
+                          <div class="elem-group">
+                              <h5>Quarto 1</h5>
+                              <p>Grátis uma semana antes</p>
+                              <p>Não é permitida devolução a partir desta data</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-      <h5>Preço</h5>
-      <div class="elem-group" style="background-color: rgba(210,210,210,1); border-radius: 15px">
-      <div class="elem-group inlined">  
-       <h5 style="float:left">1 noite</h5>
-      </div>
-      <div class="elem-group inlined">  
-        <h5 style="float:right">159.99€</h5>
-       </div>
-      <div class="elem-group inlined">
-       <h5 style="float:left">SPA</h5>
-      </div>
-      <div class="elem-group inlined">
-        <h5 style="float:right">40€</h5>
-       </div>
-      <div class="elem-group inlined">
-        <h5 style="float:left">Total:</h5>
-      </div>
-      <div class="elem-group inlined">
-        <h5 style="float:right">199.99€</h5>
-      </div>
-      </div>
-      <div class="elem-group">
-        <a href="" class="btn btn-default"></a>
-      </div>
-    </div>
-    <div class="cardz">
-      <div class="elem-group">  
-        <h3>Cancelamento</h3>
-      </div>
-      <div class="elem-group">  
-        <h5>Quarto 1</h5>
-        <p>grátis uma semana antes</p>
-        <p>Não é permitida devolução a partir desta data</p>
-      </div>
-    </div>
-    </div>
-    </div>
-    </div>  
-
-    </form>
-    <nav class="navbar navbar-transparent bg-transparent fixed-bottom">
+  </form>
+      <nav class="navbar navbar-transparent bg-transparent fixed-bottom">
         <div class="container small">
             <div class="navbar-text">&copy;  Modelaçção e análise de sistemas - 2023/24</div>
             <div class="navbar-nav">

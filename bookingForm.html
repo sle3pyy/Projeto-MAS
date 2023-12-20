@@ -63,7 +63,7 @@
           }
     </style>
 </head>
-<body>
+<body class="pt-5 pb-5">
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html" tabindex="petbooking"><img src="https://cdn.discordapp.com/attachments/1180576288730263716/1180576315015962655/image.png?ex=657dec5f&is=656b775f&hm=6629b5d5bce580488c9a3a0384a4ca4141c00ccc303a7a9f670edb596ac34fe3&" height="24" /></a>
@@ -88,139 +88,185 @@
             </div>
         </div>
     </nav>
-    <div style="height:50px"></div>
-    <div class="container">
-      <div class="row ">
-        <div class="col-9 ">
-          <div class="cardz">
-        <form action="reservation.php" method="post"></form>
-          <div class="elem-group">
-            <h3>Informação do Cliente</h3>
-          </div>        
-        <div class="elem-group inlined">
-          <label for="name">Nome</label>
-          <input type="text" id="name" name="visitor_name" placeholder="nome..." pattern=[A-Z\sa-z]{3,20} required>
-        </div>
-        <div class="elem-group inlined">
-          <label for="email">O seu E-mail</label>
-          <input type="email" id="email" name="visitor_email" placeholder="pet@email.com" required>
-        </div>
-        <div class="elem-group inlined">
-          <label for="phone">telefone</label>
-          <input type="tel" id="phone" name="telefone" placeholder="111111111" pattern=(\d{9})) required>
-        </div>
-        <div class="elem-group inlined">
-          <label for="phone">NIF</label>
-          <input type="tel" id="NIF" name="NIF" placeholder="111111111" pattern=(\d{9})) required>
-        </div>
-        <div class="elem-group">
-        <label for="pet-selection">Selecione o pet</label>
-          <select id="pet-selection" name="pet" required>
-              <option value="">os seus pets...</option>
-              <option value="pet 1">pet 1</option>
-              <option value="pet 2">pet 2</option>
-              <option value="pet 2">pet 3</option>
-          </select>
-        </div>
+    <br/>
+    <form action="reservation.php" method="post">
+      <div class="container">
+          <div class="row">
+  
+              <!-- Seção de Informações do Cliente -->
+              <div class="col-md-9">
+                  <div class="card">
+                      <div class="card-body">
+  
+                          <!-- Título -->
+                          <div class="elem-group">
+                              <h3>Informação do Cliente</h3>
+                          </div>
+  
+                          <!-- Campos de Informação do Cliente -->
+                          <div class="row">
+                              <div class="elem-group col-md-4">
+                                  <label for="name">Nome</label>
+                                  <input type="text" id="name" name="visitor_name" placeholder="Nome..." pattern=[A-Z\sa-z]{3,20} required>
+                              </div>
+                              <div class="elem-group col-md-4">
+                                  <label for="email">O seu E-mail</label>
+                                  <input type="email" id="email" name="visitor_email" placeholder="pet@email.com" required>
+                              </div>
+                              <div class="elem-group col-md-4">
+                                  <label for="phone">Telefone</label>
+                                  <input type="tel" id="phone" name="telefone" placeholder="111111111" pattern=(\d{9}) required>
+                              </div>
+                              <div class="elem-group col-md-4">
+                                  <label for="nif">NIF</label>
+                                  <input type="text" id="nif" name="nif" placeholder="111111111" pattern=(\d{9}) required>
+                              </div>
+                              <div class="elem-group col-md-4">
+                                  <label for="pet-selection">Selecione o Pet</label>
+                                  <select id="pet-selection" name="pet" required>
+                                      <option value="">Os seus pets...</option>
+                                      <option value="pet 1">Pet 1</option>
+                                      <option value="pet 2">Pet 2</option>
+                                      <option value="pet 3">Pet 3</option>
+                                  </select>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+  
+                  <!-- Seção de Morada -->
+                  <div class="card mt-3">
+                      <div class="card-body">
+  
+                          <!-- Título -->
+                          <div class="elem-group">
+                              <h3>Morada</h3>
+                          </div>
+  
+                          <!-- Campos de Morada -->
+                          <div class="row">
+                              <div class="elem-group col-md-6">
+                                  <label for="rua">Rua</label>
+                                  <input type="text" id="rua" name="rua" placeholder="Rua" pattern=[A-Z\sa-z]{3,20} required>
+                              </div>
+                              <div class="elem-group col-md-3">
+                                  <label for="CP">CP</label>
+                                  <input type="text" id="CP" name="CP" placeholder="CP" required>
+                              </div>
+                              <div class="elem-group col-md-3">
+                                  <label for="cidade">Cidade</label>
+                                  <input type="text" id="cidade" name="cidade" placeholder="Cidade" pattern=[A-Z\sa-z]{2,20} required>
+                              </div>
+                              <div class="elem-group col-md-3">
+                                  <label for="pais">País</label>
+                                  <input type="text" id="pais" name="pais" placeholder="País" pattern=[A-Z\sa-z]{3,20} required>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+  
+                  <!-- Seção de Pagamento -->
+                  <div class="card mt-3">
+                      <div class="card-body">
+  
+                          <!-- Título -->
+                          <div class="elem-group">
+                              <h3>Pagamento</h3>
+                          </div>
+  
+                          <!-- Método de Pagamento -->
+                          <div class="elem-group">
+                              <label for="card_type">Método de Pagamento</label>
+                              <select name="card_type" id="card_type" required="">
+                                  <option value="">---Seleciona o método de pagamento---</option>
+                                  <option value="MBway">MBway</option>
+                                  <option value="VISA">VISA</option>
+                                  <option value="Multibanco">Multibanco</option>
+                                  <option value="Master Card">Master Card</option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+  
+                  <!-- Botão de Confirmação -->
+                  <div class="elem-group mt-3">
+                      <a href="./payments.html" class="btn btn-primary" style="width:100%; border-radius: 25px">Confirmação</a>
+                  </div>
+  
+                  <!-- Espaçamento -->
+                  <div style="height:50px"></div>
+              </div>
+  
+              <!-- Seção de Hotel e SPA -->
+              <div class="col-md-3">
+                  <div class="card">
+                      <div class="card-body">
+  
+                          <!-- Imagem do Hotel e SPA -->
+                          <div class="elem-group">
+                              <label for="imgh">Hotel e SPA</label>
+                              <img src="https://i.kym-cdn.com/entries/icons/original/000/046/895/huh_cat.jpg" class="img-fluid rounded float-start" id="imgh">
+                          </div>
+  
+                          <!-- Datas de Check-in e Check-out -->
+                          <div class="elem-group inlined">
+                              <label for="checkin-date">CHECK-in</label>
+                              <input type="date" id="checkin-date" name="checkin" required>
+                          </div>
+                          <div class="elem-group inlined">
+                              <label for="checkout-date">CHECK-out</label>
+                              <input type="date" id="checkout-date" name="checkout" required>
+                          </div>
+  
+                          <!-- Detalhes de Preço -->
+                          <h5>Preço</h5>
+                          <div class="elem-group" style="background-color: rgba(210,210,210,1); border-radius: 15px">
+                              <div class="elem-group inlined">
+                                  <h5 style="float:left">1 noite</h5>
+                              </div>
+                              <div class="elem-group inlined">
+                                  <h5 style="float:right">159.99€</h5>
+                              </div>
+                              <div class="elem-group inlined">
+                                  <h5 style="float:left">SPA</h5>
+                              </div>
+                              <div class="elem-group inlined">
+                                  <h5 style="float:right">40€</h5>
+                              </div>
+                              <div class="elem-group inlined">
+                                  <h5 style="float:left">Total:</h5>
+                              </div>
+                              <div class="elem-group inlined">
+                                  <h5 style="float:right">199.99€</h5>
+                              </div>
+                          </div>
+  
+                          <!-- Botão de Pagar Agora -->
+                          <div class="elem-group mt-3">
+                              <a href="./payments.html" class="btn btn-primary">Pagar agora</a>
+                          </div>
+                      </div>
+                  </div>
+  
+                  <!-- Política de Cancelamento -->
+                  <div class="card mt-3">
+                      <div class="card-body">
+                          <div class="elem-group">
+                              <h3>Cancelamento</h3>
+                          </div>
+                          <div class="elem-group">
+                              <h5>Quarto 1</h5>
+                              <p>Grátis uma semana antes</p>
+                              <p>Não é permitida devolução a partir desta data</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+  
+          </div>
       </div>
-        <div class="cardz elem-group">
-        <div class="elem-group">  
-        <h3>Morada</h3>
-        </div>
-      <div class="row">
-      <div class="elem-group">
-        <label for="name">Rua</label>
-        <input type="text" id="ura" name="rua" placeholder="Rua" pattern=[A-Z\sa-z]{3,20} required>
-      </div>
-      <div class="elem-group col-4">
-        <label for="name">CP</label>
-        <input type="text" id="CP" name="CP" placeholder="CP" required>
-      </div>
-      <div class="elem-group col-4">
-        <label for="name">Cidade</label>
-        <input type="text" id="Cidade" name="Cidade" placeholder="Cidade" pattern=[A-Z\sa-z]{2,20} required>
-      </div>
-      <div class="elem-group col-4">
-        <label for="name">País</label>
-        <input type="text" id="País" name="País" placeholder="País" pattern=[A-Z\sa-z]{3,20} required>
-      </div>
-    </div>
-    </div>
-    <div class="elem-group cardz">
-      <div class="elem-group">  
-        <h3>Pagamento</h3>
-      </div>
-      <div class="elem-group">
-        <label for="card_type">Método de Pagamento</label>
-          <select name="card_type" id="card_type" required="">
-            <option value="">---seleciona o método de pagamento--</option>
-            <option value="MBway">MBway</option>
-            <option value="VISA">VISA</option>
-            <option value="Multibanco">Multibanco</option>
-            <option value="Master Card">Master Card</option>        
-          </select>    
-        </div>
-    </div>
-    <div class="elem-group">
-    <a href="./payments.html" class="btn btn-primary" style="width:100%; border-radius: 25px">Confrimação</a>
-    </div>
-    <div style="height:50px"></div>
-    </form>
-  </div> 
-
-    <div class="col-3 ">
-      <div class="cardz">
-      <div class="elem-group">
-      <label for="imgh" >Hotel e spa</label>
-      <img src="https://i.kym-cdn.com/entries/icons/original/000/046/895/huh_cat.jpg" class="img-fluid rounded float-start" id="imgh">
-      </div>
-      <div class="elem-group inlined">
-        <label for="checkin-date">CHECK-in</label>
-        <input type="date" id="checkin-date" name="checkin" required>
-      </div>
-      <div class="elem-group inlined">
-        <label for="checkout-date">CHECK-out</label>
-        <input type="date" id="checkout-date" name="checkout" required>
-      </div>
-      <h5>Preço</h5>
-      <div class="elem-group" style="background-color: rgba(210,210,210,1); border-radius: 15px">
-      <div class="elem-group inlined">  
-       <h5 style="float:left">1 noite</h5>
-      </div>
-      <div class="elem-group inlined">  
-        <h5 style="float:right">159.99€</h5>
-       </div>
-      <div class="elem-group inlined">
-       <h5 style="float:left">SPA</h5>
-      </div>
-      <div class="elem-group inlined">
-        <h5 style="float:right">40€</h5>
-       </div>
-      <div class="elem-group inlined">
-        <h5 style="float:left">Total:</h5>
-      </div>
-      <div class="elem-group inlined">
-        <h5 style="float:right">199.99€</h5>
-      </div>
-      </div>
-      <div class="elem-group">
-        <a href="./payments.html" class="btn btn-primary">Pagar agora</a>
-      </div>
-    </div>
-    <div class="cardz">
-      <div class="elem-group">  
-        <h3>Cancelamento</h3>
-      </div>
-      <div class="elem-group">  
-        <h5>Quarto 1</h5>
-        <p>grátis uma semana antes</p>
-        <p>Não é permitida devolução a partir desta data</p>
-      </div>
-    </div>
-    </div>
-    </div>
-    </div>  
-
+  </form>
+  
     <nav class="navbar navbar-light bg-light fixed-bottom">
         <div class="container small">
             <div class="navbar-text">&copy;  Modelaçção e análise de sistemas - 2023/24</div>
