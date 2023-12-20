@@ -9,7 +9,8 @@ function ViewModel() {
     self.price = ko.observable(''); 
     self.rating = ko.observable('');
     self.miniPhoto = ko.observable('');
-    self.bigPhoto = ko.observable('');    
+    self.bigPhoto = ko.observable('');  
+
     self.activate = function (id) {
         self.id(id);
         var hotel = self.hotel().find(hotel => hotel.id == id);
@@ -36,7 +37,7 @@ function ViewModel() {
             }
         }
     };
-    var pg = getUrlParameter('page');
+    var pg = getUrlParameter('id');
     console.log(pg);
     if (pg == undefined)
         self.activate(1);
