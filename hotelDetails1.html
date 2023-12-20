@@ -173,10 +173,10 @@
               </div>
               <div class="col-md-8">
                   <div class="card-body">
-                      <h6 class="card-title">Nome do Hotel</h6>
-                      <p class="card-text">Preço: $80/noite</p>
-                      <p class="card-text">Avaliação: 4 estrelas</p>
-                      <a href="#" class="btn btn-primary">Ver Detalhes</a>
+                      <h6 class="card-title" data-bind="text:name"></h6>
+                      <p class="card-text"  data-bind="text:'Preço: '+ price() + '/noite'"></p>
+                      <p class="card-text"  data-bind="text:'Avaliação: '+rating()"></p>
+                      <a href="#" class="btn btn-primary" data-bind="attr: {href:'./hotelDetails1.html?id='+ id}">Ver Detalhes</a>
                   </div>
               </div>
           </div>
@@ -213,8 +213,8 @@
                   </button>
               </div>
               <div class="card-body">
-                <h2 class="card-title">Nome do Hotel</h2>
-                <p class="card-text">Avaliação: 4 estrelas</p>
+                <h2 class="card-title" data-bind="text:name"></h2>
+                <p class="card-text" data-bind="text: 'Avaliação: '+rating()+' estrelas'"></p>
             </div>
           </div>
       </div>
@@ -227,32 +227,13 @@
                 <!-- Títulos clicáveis -->
                 <div class="d-flex">
                     <div class="me-3">
-                        <h4 class="detail-title" onclick="showDetail('descricao')">Descrição</h4>
-                    </div>
-                    <div class="me-3">
-                        <h4 class="detail-title" onclick="showDetail('instalacoes')">Instalações</h4>
-                    </div>
-                    <div>
-                        <h4 class="detail-title" onclick="showDetail('servicos')">Serviços</h4>
-                    </div>
-                </div>
-                
-    
-                <!-- Conteúdo dinâmico -->
-                <div id="descricao" class="detail-content">
-                    <p>Texto da descrição do hotel.</p>
-                </div>
-                <div id="instalacoes" class="detail-content" style="display: none;">
-                    <p>Texto sobre as instalações do hotel.</p>
-                </div>
-                <div id="servicos" class="detail-content" style="display: none;">
-                    <p>Texto sobre os serviços oferecidos pelo hotel.</p>
+                        <h4 class="detail-title" >Descrição</h4>
+                        <p data-bind="text:description"></p>
                 </div>
             </div>
         </div>
     </div>
-      <!-- Fim dos Detalhes do Hotel -->
-
+  
  <!-- Secção de Comentários -->
 <div class="col-md-12 mt-3">
   <div class="card">
@@ -334,6 +315,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
       <script src="logged.js"></script>
       <script src="bookingBar.js"></script>
+      <script src="hotelDetails.js"></script>
   
 </body>
 </html>
