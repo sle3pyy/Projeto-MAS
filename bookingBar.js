@@ -15,37 +15,7 @@ document.getElementById('cidade').addEventListener('change', function() {
     localStorage.setItem('destino', destino);
     console.log(destino);
 });
-document.addEventListener('DOMContentLoaded', function () {
-    const datepickerContainer = document.getElementById('datepickerContainer');
-    const showDatesButton = document.getElementById('showDatesButton');
 
-    const datepicker = flatpickr(datepickerContainer, {
-      mode: 'range',
-      dateFormat: 'Y-m-d',
-      onClose: function (selectedDates) {
-        if (selectedDates && selectedDates.length > 0) {
-          const startDate = selectedDates[0];
-          const endDate = selectedDates.length > 1 ? selectedDates[1] : startDate;
-          const startDateString = startDate.toLocaleDateString();
-          const endDateString = endDate.toLocaleDateString();
-        }
-      },
-      onOpen: function () {
-        datepickerContainer.setAttribute('data-popper-placement', 'bottom-start');
-      }
-    });
-
-    const popper = Popper.createPopper(showDatesButton, datepickerContainer, {
-      placement: 'bottom-start',
-    });
-
-    showDatesButton.addEventListener('click', function () {
-      datepicker.toggle();
-    });
-  });
-
-  // hospedes
-  // Initialize the quantity counters
   const quantityCounters = {
     'Cães': 0,
     'Gatos': 0,
