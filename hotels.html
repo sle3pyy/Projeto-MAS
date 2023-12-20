@@ -148,16 +148,16 @@
           <!-- Lista de Cards de Hotéis -->
           <div class="col-md-8">
             <!-- Exemplo de Card de Hotel (você pode replicar isso dinamicamente com dados reais) -->
-            <div class="row">
+            <div class="row" data-bind="foreach: hotel">
               <div class="col-md-4 mb-3">
                 <div class="card">
                   <img src="https://via.placeholder.com/150" class="card-img-top" alt="Imagem do Hotel">
                   <div class="card-body">
-                    <h5 class="card-title">Nome do Hotel</h5>
-                    <p class="card-text">Descrição breve do hotel.</p>
-                    <p class="card-text">Preço: $100/noite</p>
-                    <p class="card-text">Avaliação: 4 estrelas</p>
-                    <a href="#" class="btn btn-primary" data-bind="attr: {href:'./hotelDetails1.html?id='+ Id()}">Ver Detalhes</a>
+                    <h5 class="card-title" data-bind="text:name"></h5>
+                    <p class="card-text" data-bind="text:miniDescription"></p>
+                    <p class="card-text"  data-bind="text:'Preço: '+ price + '/noite'"></p>
+                    <p class="card-text"  data-bind="text:'Avaliação: '+rating"></p>
+                    <a href="#" class="btn btn-primary" data-bind="attr: {href:'./hotelDetails1.html?id='+ id}">Ver Detalhes</a>
                   </div>
                 </div>
               </div>
