@@ -105,13 +105,19 @@ function BookingFormViewModel() {
 $(document).ready(function() {
 ko.applyBindings(new BookingFormViewModel());
 $('#Mbway').hide();
+$('#Cartão').hide();
 $('#payment-method').change(function() {
     var selectedOption = $(this).val();
     console.log(selectedOption);
-    if (selectedOption === 'Cartão' || selectedOption === '') {
+    if (selectedOption === '') {
         $('#Mbway').hide();
-    } else {
+        $('#Cartão').hide();
+    } else if (selectedOption === 'Mbway') {
+        $('#Cartão').hide();
         $('#Mbway').show();
+    } else if (selectedOption === 'Cartão') {
+        $('#Mbway').hide();
+        $('#Cartão').show();
     }
 });
 });
