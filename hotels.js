@@ -1,6 +1,5 @@
 function ViewModel() {
     var self=this
-    self.Id = ko.observable('');
     self.hotel = ko.observableArray([]);
     self.hotel(hotels.hotels);
 }

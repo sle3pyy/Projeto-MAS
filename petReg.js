@@ -2,10 +2,9 @@ var vm= function(){
     var self = this;
     self.animals = ko.observableArray([]);
     self.account = ko.observableArray([]);
-    self.loggedInEmail = ko.observable(localStorage.getItem('loggedInEmail'));
     var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
-    var loggedInEmail = localStorage.getItem('loggedInEmail');
-    var account = existingData.find(account => account.email === loggedInEmail);
+    self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    var account = existingData.find(account => account.email === loggedInUser.email);
     self.name= ko.observable('');
     self.name(account.nome);
     self.apelido= ko.observable('');
@@ -29,7 +28,7 @@ var vm= function(){
     
     self.account(account);
     self.animals(account.animals);
-    console.log(self.animals(),self.account(), loggedInEmail)
+    console.log(self.animals(),self.account(), this.loggedInUser)
 
     $('form').on('submit', function(event) {
         event.preventDefault();
@@ -39,8 +38,8 @@ var vm= function(){
             console.log(formData)
         });
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
-        var loggedInEmail = localStorage.getItem('loggedInEmail');
-        var account = existingData.find(account => account.email === loggedInEmail);
+        self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+        var account = existingData.find(account => account.email === loggedInUser.email);
         self.account(account);
         self.animals(account.animals);
     
@@ -71,8 +70,8 @@ var vm= function(){
 
     $('#clearAnimals').on('click', function() {
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
-        var loggedInEmail = localStorage.getItem('loggedInEmail');
-        var account = existingData.find(account => account.email === loggedInEmail);
+        self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+        var account = existingData.find(account => account.email === loggedInUser.email);
 
         if (!account) {
             alert('No logged-in account found.');
@@ -99,8 +98,8 @@ var vm= function(){
         var viewModel = new vm();
         ko.applyBindings(viewModel);
 
-        var loggedInEmail = localStorage.getItem('loggedInEmail');
+        self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
-        var account = existingData.find(account => account.email === loggedInEmail);
+        var account = existingData.find(account => account.email === loggedInUser.email);
         console.log(account)
     });    

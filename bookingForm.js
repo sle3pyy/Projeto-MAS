@@ -1,15 +1,32 @@
-function ViewModel() {
+function BookingFormViewModel() {
     var self=this
     self.id = ko.observable('');
     self.hotel = ko.observableArray([]);
+    self.animals = ko.observableArray([]);
+    self.account = ko.observableArray([]);
     self.hotel(hotels.hotels);
     self.name = ko.observable('');
     self.miniDescription = ko.observable('');
     self.description = ko.observable('');
     self.price = ko.observable(''); 
+    self.totalPrice = ko.observable(''); 
     self.rating = ko.observable('');
     self.miniPhoto = ko.observable('');
     self.bigPhoto = ko.observable('');  
+    var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
+    self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    var account = existingData.find(account => account.email === loggedInUser.email);
+    self.account(account);
+    self.animals(account.animals);
+    console.log(self.animals(),self.account(), loggedInUser.email)
+
+    $('#checkout-date').change(function() {
+        var dateDifference = calculateDateDifference();
+        self.totalPrice(self.price()*dateDifference);
+        $('#tp').text(self.totalPrice() + '€');
+        console.log(self.totalPrice());
+
+    });
 
     self.activate = function (id) {
         self.id(id);
@@ -18,6 +35,7 @@ function ViewModel() {
         self.miniDescription(hotel.miniDescription);
         self.description(hotel.description);
         self.price(hotel.price);
+        self.totalPrice(hotel.price);
         self.rating(hotel.rating);
         self.miniPhoto(hotel.miniPhoto);
         self.bigPhoto(hotel.bigPhoto);
@@ -48,8 +66,33 @@ function ViewModel() {
 }
 
 $(document).ready(function() {
-ko.applyBindings(new ViewModel());
+ko.applyBindings(new BookingFormViewModel());
+$('#Mbway').hide();
+$('#payment-method').change(function() {
+    var selectedOption = $(this).val();
+    console.log(selectedOption);
+    if (selectedOption === 'Cartão' || selectedOption === '') {
+        $('#Mbway').hide();
+    } else {
+        $('#Mbway').show();
+    }
 });
+});
+
+function calculateDateDifference() {
+    var checkinDate = new Date(document.getElementById('checkin-date').value);
+    var checkoutDate = new Date(document.getElementById('checkout-date').value);
+
+    var differenceInTime = checkoutDate.getTime() - checkinDate.getTime();
+    var differenceInDays = differenceInTime / (1000 * 3600 * 24);
+
+    return Math.abs(differenceInDays);
+}
+
+
+
+// Usage:
+console.log(calculateDateDifference());
 let hotels={
     "hotels": [
       {

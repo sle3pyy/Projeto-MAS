@@ -3,11 +3,12 @@ var vm= function(){
     self.animals = ko.observableArray([]);
     self.petPhotos = ko.observableArray([]);
     self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-    console.log(self.loggedInUser);
+    console.log(self.loggedInUser.email);
 
-    if (self.loggedInUser) {
+    if (self.loggedInUser.email) {
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
         var account = existingData.find(account => account.email === self.loggedInUser.email);
+        console.log(account);
         if (account && account.animals) {
             self.animals(account.animals);
         }
