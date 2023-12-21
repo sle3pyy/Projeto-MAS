@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="myCSS.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<style>
+        .booking-bar {
+          background-color: #feba02;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    
+        .booking-bar .btn-primary {
+          background-color: #007BFF;
+          border-color: #007BFF;
+          border-radius: 10px;
+        }
+        .containermt-2main-content {
+      margin-top: 200px; /* Ajuste a altura conforme necessário */
+    }
+    #datepickerContainer {
+      position: absolute;
+      z-index: 9999;
+      display: none;
+    }
+    .yellow-box {
+      background-color: #feba02;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    
+   
+
+      </style>
+</head>
+<body class="pt-5 pb-5"> 
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" tabindex="petbooking"><img src="https://cdn.discordapp.com/attachments/1180576288730263716/1180576315015962655/image.png?ex=657dec5f&is=656b775f&hm=6629b5d5bce580488c9a3a0384a4ca4141c00ccc303a7a9f670edb596ac34fe3&" height="24" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link textb buttonbg" aria-current="page" href="hotels.html">Hotel</a></li>
+                    <li class="nav-item"><a class="nav-link textb buttonbg" aria-current="page" href="xxx.html">Pet Sitting</a></li>
+                    <li class="nav-item"><a class="nav-link textb buttonbg" aria-current="page" href="xxx.html">Treino</a></li>
+                    <li class="nav-item"><a class="nav-link textb buttonbg" aria-current="page" href="xxx.html">SPA</a></li>
+                </ul>    
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link textb" aria-current="page" href="xxx.html">EUR</a></li>
+                    <li class="nav-item"><a class="nav-link textb" aria-current="page" href="xxx.html"></a></li>
+                    <li class="nav-item"><a class="nav-link textb" aria-current="page" href="xxx.html">Registe a sua propriedade</a></li>
+                    <li class="nav-item"><a class="nav-link textb bb2" aria-current="page" href="xxx.html">Log in</a></li>
+                    <li class="nav-item"><a class="nav-link textb bb2" aria-current="page" href="xxx.html">Sing in</a></li>
+                    <!--<li class="nav-item"><a class="nav-link" aria-current="page" href="xxx.html"><i class="fa fa-magic" title="The party continues..."></i> &middot;&middot;&middot;</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br/>
+<!-- Informações sobre o animal -->
+<div class="container main-content">
+  <div class="card mb-3">
+      <div class="row g-0">
+          <!-- Imagem à esquerda -->
+          <div class="col-md-4">
+              <img src="caminho/para/sua/imagem.jpg" alt="Imagem do Animal" class="img-fluid">
+          </div>
+          <!-- Informações do animal à direita -->
+          <div class="col-md-8">
+              <div class="card-body">
+                  <h5 class="card-title">Nome do Animal</h5>
+                  <p class="card-text"><strong>Tipo:</strong> Cão</p>
+                  <p class="card-text"><strong>Quantidade:</strong> 1</p>
+                  <p class="card-text"><strong>Descrição:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <!-- Adicione mais informações conforme necessário -->
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Seção com informações sobre o animal no alojamento -->
+  <div class="row mt-4">
+    <!-- Lado Esquerdo -->
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Estado do Animal no Alojamento</h3>
+                <p><strong>Alimentação:</strong>
+                    <select class="form-select" id="alimentacaoAnimal">
+                        <option selected>Já almoçou</option>
+                        <option>Ainda não comeu</option>
+                    </select>
+                </p>
+                <p><strong>Comportamento:</strong>
+                    <select class="form-select" id="comportamentoAnimal">
+                        <option selected>Dócil</option>
+                        <option>Agitado</option>
+                        <!-- Adicione mais opções conforme necessário -->
+                    </select>
+                </p>
+                <!-- Adicione mais informações conforme necessário -->
+            </div>
+        </div>
+
+          <!-- Seção de Mensagens -->
+          <div class="card mt-3">
+              <div class="card-body">
+                  <h3 class="card-title">Mensagens para o Dono do Alojamento</h3>
+                  <!-- Lista de Mensagens -->
+                  <ul class="list-group">
+                      <li class="list-group-item">
+                          <strong>Assunto:</strong> Reservas para o próximo mês
+                          <p>Mensagem: Olá, gostaria de fazer reservas para o próximo mês. Obrigado!</p>
+                      </li>
+                      <!-- Adicione mais mensagens conforme necessário -->
+                  </ul>
+                  <!-- Formulário para Nova Mensagem -->
+                  <form class="mt-3">
+                      <div class="mb-3">
+                          <label for="subject" class="form-label">Assunto:</label>
+                          <input type="text" class="form-control" id="subject" required>
+                      </div>
+                      <div class="mb-3">
+                          <label for="message" class="form-label">Mensagem:</label>
+                          <textarea class="form-control" id="message" rows="3" required></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                  </form>
+                  <!-- Fim do Formulário para Nova Mensagem -->
+              </div>
+          </div>
+      </div>
+
+      <!-- Lado Direito -->
+      <div class="col-md-4">
+          
+
+          <!-- Informações da Cela -->
+          <div class="card mt-3">
+              <div class="card-body">
+                  <h3 class="card-title">Informações da Cela</h3>
+                  <p><strong>Número:</strong> 123</p>
+                  <p><strong>Tamanho:</strong> Grande</p>
+                  <!-- Adicione mais informações conforme necessário -->
+              </div>
+          </div>
+
+          <!-- Datas de Alojamento -->
+          <div class="card mt-3">
+              <div class="card-body">
+                  <h3 class="card-title">Datas de Alojamento</h3>
+                  <p><strong>Check-In:</strong> 01/01/2023</p>
+                  <p><strong>Check-Out:</strong> 10/01/2023</p>
+                  <!-- Adicione mais informações conforme necessário -->
+              </div>
+          </div>
+
+          <!-- Últimas Mensagens -->
+          <div class="card mt-3">
+              <div class="card-body">
+                  <h5 class="card-title">Últimas Mensagens</h5>
+                  <ul class="list-group">
+                      <li class="list-group-item">
+                          <strong>Assunto:</strong> Reservas para o próximo mês
+                          <p>Mensagem: Olá, gostaria de fazer reservas para o próximo mês. Obrigado!</p>
+                      </li>
+                      <!-- Adicione mais mensagens conforme necessário -->
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+   </div>
+    </div>
+  </div>
+      <nav class="navbar navbar-transparent bg-transparent fixed-bottom">
+        <div class="container small">
+            <div class="navbar-text">&copy;  Modelaçção e análise de sistemas - 2023/24</div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
+            </div>
+        </div>
+    </nav>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+      <script src="logged.js"></script>
+      <script src="bookingar.js"></script>
+  
+</body>
+</html>
