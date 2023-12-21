@@ -4,7 +4,6 @@ function BookingFormViewModel() {
     self.hotel = ko.observableArray([]);
     self.animals = ko.observableArray([]);
     self.account = ko.observableArray([]);
-    self.hotel(hotels.hotels);
     self.name = ko.observable('');
     self.miniDescription = ko.observable('');
     self.description = ko.observable('');
@@ -16,11 +15,13 @@ function BookingFormViewModel() {
     self.selectedAnimal = ko.observable();
     var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
     self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-    var account = existingData.find(account => account.email === loggedInUser.email);
+    var account = existingData.find(existingData => existingData.email === loggedInUser.email);
     self.account(account);
     self.animals(account.animals);
-    console.log(self.animals(),self.account(), loggedInUser.email)
+    let hotels = existingData.filter(existingData => existingData.accType === 'fornecedor');
 
+  // Push hotels into the observable array
+  hotels.forEach(hotel => self.hotel.push(hotel));
     $('#checkout-date').change(function() {
         var dateDifference = calculateDateDifference();
         self.totalPrice(self.price()*dateDifference);
@@ -153,9 +154,6 @@ $('#clearStorage').on('click', function() {
     alert('Storage cleared!');
 });
 
-
-// Usage:
-console.log(calculateDateDifference());
 let hotels={
     "hotels": [
       {

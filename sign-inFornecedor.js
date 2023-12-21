@@ -4,7 +4,7 @@ $('form').on('submit', function(event) {
     $(this).find('input, select').each(function() {
         formData[$(this).attr('id')] = $(this).val();
         formData["accType"]="fornecedor"
-        formData["rating"]=null
+        formData["rating"]=0
         formData["miniPhoto"]=null
         formData["bigPhoto"]=null
         console.log(formData)
