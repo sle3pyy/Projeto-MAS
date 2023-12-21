@@ -60,8 +60,8 @@
         </div>
         <div class="col-8">
           <h3 style="height:15%" id="hotelName">Bem-vindo ao Seu Hotel</h3>
-          <p>Endereço: <span id="hotelAddress">Rua do Hotel, Cidade, Distrito</span></p>
-          <p>Descrição: <span id="hotelDescription">Descrição do hotel.</span></p>
+          <p>Endereço: <span id="hotelAddress" data-bind="text:rua()+', '+cidade()+', '+Distrito()"></span></p>
+          <p>Descrição: <span id="hotelDescription"data-bind="text:miniDescription"></span></p>
           <button type="button" class="btn btn-primary pull-right" data-bs-toggle="modal" data-bs-target="#editHotelModal">Editar Hotel</button>
         </div>
       </div>
