@@ -7,7 +7,7 @@ if (loggedInUser && loggedInUser.accType==="cliente") {
     console.log(localStorage.getItem('loggedInEmail'));
 }
 else if(loggedInUser && loggedInUser.accType==="fornecedor"){
-    $('a[href="log-in.html"]').html('<i class="fa fa-user"></i>').attr('href', 'petRegFornecedor.html');
+    $('a[href="log-in.html"]').html('<i class="fa fa-user"></i>').attr('href', 'atividadeFornecedor.html');
     $('a[href="sign-in.html"]').text('Log out').attr('href', 'index.html').attr('id', 'logout');
     $("#regp").hide();
     
