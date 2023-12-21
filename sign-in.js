@@ -5,6 +5,7 @@ $(document).ready(function() {
 
         $(this).find('input').each(function() {
             formData[$(this).attr('id')] = $(this).val();
+            formData["accType"]="cliente"
         });
         var existingData;
         try {

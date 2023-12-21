@@ -2,20 +2,15 @@ var vm= function(){
     var self = this;
     self.animals = ko.observableArray([]);
     self.petPhotos = ko.observableArray([]);
-    self.loggedInEmail = localStorage.getItem('loggedInEmail');
-    console.log(self.loggedInEmail);
-    if (localStorage.getItem('loggedInEmail')) {
-        $('a[href="log-in.html"]').html('<i class="fa fa-user"></i>').attr('href', 'petReg.html');
-        $('a[href="sign-in.html"]').text('Log out').attr('href', 'index.html').attr('id', 'logout');
-        
-        self.loggedInEmail = localStorage.getItem('loggedInEmail');
+    self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    console.log(self.loggedInUser);
+
+    if (self.loggedInUser) {
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
-        var account = existingData.find(account => account.email === self.loggedInEmail);
+        var account = existingData.find(account => account.email === self.loggedInUser.email);
         if (account && account.animals) {
             self.animals(account.animals);
-    
         }
-        console.log('Logged in!');
         console.log(self.animals())
     }
     else {
@@ -24,7 +19,7 @@ var vm= function(){
     
     $('#logout').on('click', function(event) {
         event.preventDefault();
-        localStorage.removeItem('loggedInEmail');
+        localStorage.removeItem('loggedInUser');
         window.location.href = 'index.html'; 
     });
 };
