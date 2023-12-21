@@ -18,6 +18,7 @@ function ViewModel() {
     self.rating = ko.observable('');
     self.miniPhoto = ko.observable('');
     self.bigPhoto = ko.observable('');  
+    self.petsHospedated = ko.observableArray([]);
 
     this.comments = ko.observableArray([
         new Comment("João", "2023-01-01", "Ótimo serviço!"),
@@ -25,7 +26,6 @@ function ViewModel() {
         // Adicione mais comentários conforme necessário
     ]);
     // Observable array to store the pets
-    self.petsHospedated = ko.observableArray([]);
     let accounts = JSON.parse(localStorage.getItem('accounts')) || [];
     self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     var account = accounts.find(account => account.email === loggedInUser.email);
@@ -49,8 +49,6 @@ function ViewModel() {
     };
     // Function to load the pets from local storage
     self.loadPets = function() {
-        hotelName
-        self.name()
         var pets = JSON.parse(localStorage.getItem('pets_Hospedated')) || [];
         self.petsHospedated(pets);
         var matchedPets = pets.filter(pet => pet.hotelName === self.name());

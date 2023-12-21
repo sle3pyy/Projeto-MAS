@@ -136,7 +136,7 @@
         <h5 class="card-title" data-bind="text:name"></h5>
         <p class="card-text" data-bind="html: 'Check-in: '+ checkinDate">Data e Hora</p>
         <p class="card-text"data-bind="html: 'Check-out: '+ checkoutDate">Check-out: Data e Hora</p>
-        <button type="button" class="btn btn-primary">Ver Detalhes</button>
+        <a class="btn btn-primary" data-bind="attr: {href: './petMenuFornecedor.html?name='+name+'&hotel='+hotelName}">Ver Detalhes</a>
       </div>
     </div>
   </div>
