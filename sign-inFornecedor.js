@@ -3,6 +3,7 @@ $('form').on('submit', function(event) {
     var formData = {}; 
     $(this).find('input, select').each(function() {
         formData[$(this).attr('id')] = $(this).val();
+        formData["description"]=$("#description").val()
         formData["accType"]="fornecedor"
         formData["rating"]=0
         formData["miniPhoto"]="https://www.irvineparkrailroad.com/wp-content/uploads/2016/06/150x150-image-placeholder.jpg"

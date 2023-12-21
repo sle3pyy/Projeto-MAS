@@ -9,6 +9,7 @@ function ViewModel() {
     self.race = ko.observable('');
     self.age = ko.observable('');
     self.weight = ko.observable('');
+    self.petPhoto = ko.observable('');
 
     self.loadPets = function(petName) {
         let accounts = JSON.parse(localStorage.getItem('accounts')) || [];
@@ -62,6 +63,7 @@ function ViewModel() {
         self.race(pet.Race)
         self.age(pet.Age)
         self.weight(pet.Weight);
+        self.petPhoto(pet.petPhoto);
     };
     function getUrlParameter(sParam) {
         var sPageURL = window.location.search.substring(1),

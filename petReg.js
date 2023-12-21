@@ -35,6 +35,7 @@ var vm= function(){
         var formData = {}; 
         $(this).find('input, select').each(function() {
             formData[$(this).attr('id')] = $(this).val();
+            formData.petPhoto = "https://www.irvineparkrailroad.com/wp-content/uploads/2016/06/150x150-image-placeholder.jpg"
             formData.hotelName = null
             formData.checkinDate = null
             formData.checkoutDate = null

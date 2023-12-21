@@ -54,7 +54,8 @@
     <form id="editHotelForm">
     <div class="container" style="margin-top: 80px;">
       <div class="row hotel-info">
-        <div id="hotelCarousel" class="carousel slide carousel-fade mb-5 col-4 align-self-start" data-bs-ride="carousel" data-bs-interval="10000">
+        <div class="col-4">
+          <img data-bind="attr:{src:bigPhoto}" class="d-block w-100" style="z-index:100">
         </div>
         <div class="col-8">
           <h3 style="height:15%" id="hotelName">Bem-vindo ao Seu Hotel</h3>
@@ -75,6 +76,7 @@
       <div class="modal-body">
         <!-- Formulário para editar as informações do hotel -->
         <form>
+            
           <div class="mb-3">
             <label for="editHotelName" class="form-label">Nome do Hotel</label>
             <input type="text" class="form-control" id="editHotelName" placeholder="Seu Hotel">
