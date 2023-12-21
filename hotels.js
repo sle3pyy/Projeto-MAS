@@ -2,10 +2,13 @@ function ViewModel() {
     var self=this
     self.hotel = ko.observableArray([]);
     self.hotel(hotels.hotels);
+    self.hotel1(hotels.hotels1);
 }
 $(document).ready(function() {
 ko.applyBindings(new ViewModel());
 });
+let accounts = JSON.parse(localStorage.getItem('accounts')) || [];
+let hotels1 = accounts.filter(account => account.accType === 'fornecedor');
 let hotels={
     "hotels": [
       {

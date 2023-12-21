@@ -4,6 +4,9 @@ $('form').on('submit', function(event) {
     $(this).find('input, select').each(function() {
         formData[$(this).attr('id')] = $(this).val();
         formData["accType"]="fornecedor"
+        formData["rating"]=null
+        formData["miniPhoto"]=null
+        formData["bigPhoto"]=null
         console.log(formData)
     });
     var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
