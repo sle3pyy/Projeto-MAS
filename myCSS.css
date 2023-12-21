@@ -114,3 +114,24 @@ content: '\2605'; /* Código Unicode para uma estrela sólida */
 .rating input:hover ~ label:before {
 color: #FFD700; /* Cor da estrela preenchida (amarela) */
 }
+.add-button {
+    background-color: lightgrey;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .add-button:hover {
+    background-color: darkgrey;
+  }
+
+  .plus-symbol {
+    vertical-align: middle;
+  }
