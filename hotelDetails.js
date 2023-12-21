@@ -12,10 +12,11 @@ function ViewModel() {
 
   // Get accounts from local storage
   let accounts = JSON.parse(localStorage.getItem('accounts')) || [];
-  let hotels = accounts.filter(account => account.accType === 'fornecedor');
+  let hotelis = accounts.filter(account => account.accType === 'fornecedor');
 
-  // Push hotels into the observable array
-  hotels.forEach(hotel => self.hotel.push(hotel));
+  self.hotel(hotels.hotels)
+  hotelis.forEach(hotel => self.hotel.push(hotel));
+  console.log(self.hotel());
 
     self.activate = function (id) {
         self.id(id);
@@ -27,7 +28,6 @@ function ViewModel() {
         self.rating(hotel.rating);
         self.miniPhoto(hotel.miniPhoto);
         self.bigPhoto(hotel.bigPhoto);
-       console.log(hotel)
     };
     function getUrlParameter(sParam) {
         var sPageURL = window.location.search.substring(1),

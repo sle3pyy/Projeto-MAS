@@ -44,17 +44,21 @@ function ViewModel() {
         self.rua(hotel.rua)
         self.cidade(hotel.cidade);
         self.Distrito(hotel.Distrito);
-       console.log(hotel)
+       
+       self.loadPets();
     };
     // Function to load the pets from local storage
     self.loadPets = function() {
+        hotelName
+        self.name()
         var pets = JSON.parse(localStorage.getItem('pets_Hospedated')) || [];
         self.petsHospedated(pets);
-        console.log(pets[0].name)
+        var matchedPets = pets.filter(pet => pet.hotelName === self.name());
+        self.petsHospedated(matchedPets);
+        console.log(matchedPets)
     };
 
     // Load the pets when the ViewModel is created
-    self.loadPets();
     self.activate(self.hotel.id)
     console.log("Vm innitiated")
 }
