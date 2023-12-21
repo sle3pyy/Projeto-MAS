@@ -1,15 +1,21 @@
 function ViewModel() {
-    var self=this
-    self.id = ko.observable('');
-    self.hotel = ko.observableArray([]);
-    self.hotel(hotels.hotels);
-    self.name = ko.observable('');
-    self.miniDescription = ko.observable('');
-    self.description = ko.observable('');
-    self.price = ko.observable(''); 
-    self.rating = ko.observable('');
-    self.miniPhoto = ko.observable('');
-    self.bigPhoto = ko.observable('');  
+  var self = this;
+  self.id = ko.observable('');
+  self.hotel = ko.observableArray([]);
+  self.name = ko.observable('');
+  self.miniDescription = ko.observable('');
+  self.description = ko.observable('');
+  self.price = ko.observable(''); 
+  self.rating = ko.observable('');
+  self.miniPhoto = ko.observable('');
+  self.bigPhoto = ko.observable('');  
+
+  // Get accounts from local storage
+  let accounts = JSON.parse(localStorage.getItem('accounts')) || [];
+  let hotels = accounts.filter(account => account.accType === 'fornecedor');
+
+  // Push hotels into the observable array
+  hotels.forEach(hotel => self.hotel.push(hotel));
 
     self.activate = function (id) {
         self.id(id);
