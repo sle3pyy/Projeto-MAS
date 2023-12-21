@@ -8,6 +8,12 @@ function ViewModel() {
     self.hotel(hotels.hotels)
     hotelis.forEach(hotel => self.hotel.push(hotel));
     console.log(self.hotel());
+    self.hotel(hotels.hotels)
+    console.log(self.hotel());
+    var search = document.getElementById('cidade').value;
+    var matchedHotels = self.hotel().filter(hotels => hotels.Distrito.toLowerCase().includes(search.toLowerCase()));
+    console.log(matchedHotels)
+    self.hotel(matchedHotels);
 
     self.search=function(){
         let accounts = JSON.parse(localStorage.getItem('accounts')) || [];

@@ -14,7 +14,9 @@ var vm= function(){
     self.hotel(hotels.hotels)
     hotelis.forEach(hotel => self.hotel.push(hotel));
     console.log(self.hotel());
-
+    self.search=function(){
+        window.location.href = 'hotels.html';
+    }
     if (self.loggedInUser.email) {
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
         var account = existingData.find(account => account.email === self.loggedInUser.email);

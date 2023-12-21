@@ -17,7 +17,9 @@ function ViewModel() {
   self.hotel(hotels.hotels)
   hotelis.forEach(hotel => self.hotel.push(hotel));
   console.log(self.hotel());
-
+  self.search=function(){
+    window.location.href = 'hotels.html';
+  }
     self.activate = function (id) {
         self.id(id);
         var hotel = self.hotel().find(hotel => hotel.id == id);

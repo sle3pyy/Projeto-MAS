@@ -5,8 +5,8 @@ $('form').on('submit', function(event) {
         formData[$(this).attr('id')] = $(this).val();
         formData["accType"]="fornecedor"
         formData["rating"]=0
-        formData["miniPhoto"]=null
-        formData["bigPhoto"]=null
+        formData["miniPhoto"]="https://www.irvineparkrailroad.com/wp-content/uploads/2016/06/150x150-image-placeholder.jpg"
+        formData["bigPhoto"]="https://via.placeholder.com/1200x480"
         console.log(formData)
     });
     var existingData;
