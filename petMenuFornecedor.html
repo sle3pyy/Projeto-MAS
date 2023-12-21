@@ -51,10 +51,10 @@
           <!-- Informações do animal à direita -->
           <div class="col-md-8">
               <div class="card-body">
-                  <h5 class="card-title" data-bind="text:name">Nome do Animal</h5>
-                  <p class="card-text" data-bind="html:'<strong>Tipo: '+ animalType()"></p>
-                  <p class="card-text"><strong>Quantidade:</strong> 1</p>
-                  <p class="card-text"><strong>Descrição:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <h5 class="card-title" data-bind="html:'<strong>' + name()+ '</strong>'">Nome do Animal</h5>
+                  <p></p>
+                  <p class="card-text" data-bind="html:'<strong>Tipo: </strong>' + animalType() "></p>
+                  <p class="card-text" data-bind="html:'<strong>Descrição: </strong>'+ race()+', '+age()+' anos, '+weight() "></p>
                   <!-- Adicione mais informações conforme necessário -->
               </div>
           </div>
@@ -70,14 +70,14 @@
                 <h3 class="card-title">Estado do Animal no Alojamento</h3>
                 <p><strong>Alimentação:</strong>
                     <select class="form-select" id="alimentacaoAnimal">
-                        <option selected>Já almoçou</option>
-                        <option>Ainda não comeu</option>
+                        <option value="Já comeu"selected>Já comeu</option>
+                        <option value="Ainda não comeu">Ainda não comeu</option>
                     </select>
                 </p>
                 <p><strong>Comportamento:</strong>
                     <select class="form-select" id="comportamentoAnimal">
-                        <option selected>Dócil</option>
-                        <option>Agitado</option>
+                        <option value="Dócil"selected>Dócil</option>
+                        <option value="Agitado">Agitado</option>
                         <!-- Adicione mais opções conforme necessário -->
                     </select>
                 </p>
@@ -132,23 +132,9 @@
           <div class="card mt-3">
               <div class="card-body">
                   <h3 class="card-title">Datas de Alojamento</h3>
-                  <p><strong>Check-In:</strong> 01/01/2023</p>
-                  <p><strong>Check-Out:</strong> 10/01/2023</p>
+                  <p data-bind="html:'<strong>Check-In: </strong>'+checkinDate()"></p>
+                  <p data-bind="html:'<strong>Check-Out: </strong>'+checkoutDate()"></p>
                   <!-- Adicione mais informações conforme necessário -->
-              </div>
-          </div>
-
-          <!-- Últimas Mensagens -->
-          <div class="card mt-3">
-              <div class="card-body">
-                  <h5 class="card-title">Últimas Mensagens</h5>
-                  <ul class="list-group">
-                      <li class="list-group-item">
-                          <strong>Assunto:</strong> Reservas para o próximo mês
-                          <p>Mensagem: Olá, gostaria de fazer reservas para o próximo mês. Obrigado!</p>
-                      </li>
-                      <!-- Adicione mais mensagens conforme necessário -->
-                  </ul>
               </div>
           </div>
       </div>

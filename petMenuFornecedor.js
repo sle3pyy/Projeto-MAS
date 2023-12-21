@@ -10,7 +10,7 @@ function ViewModel() {
     self.age = ko.observable('');
     self.weight = ko.observable('');
 
-    self.loadPets = function(petName, hotel) {
+    self.loadPets = function(petName) {
         let accounts = JSON.parse(localStorage.getItem('accounts')) || [];
         self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
         var account = accounts.find(account => account.email === self.loggedInUser.email);
@@ -21,6 +21,19 @@ function ViewModel() {
         console.log(matchedPet);
         self.activate(matchedPet)
     };
+    var alimentacaoAnimalSelect = document.getElementById('alimentacaoAnimal');
+    var comportamentoAnimalSelect = document.getElementById('comportamentoAnimal');
+
+    // Attach onchange event handlers
+    alimentacaoAnimalSelect.onchange = handleSelectChange;
+    comportamentoAnimalSelect.onchange = handleSelectChange;
+
+    function handleSelectChange() {
+    var alimentacaoAnimal = alimentacaoAnimalSelect.value;
+    var comportamentoAnimal = comportamentoAnimalSelect.value;
+    console.log('Alimentação do Animal:', alimentacaoAnimal);
+    console.log('Comportamento do Animal:', comportamentoAnimal);
+    }
     self.activate = function (pet) {
         self.name(pet.name)
         self.checkinDate(pet.checkinDate);
@@ -45,8 +58,7 @@ function ViewModel() {
         }
     };
     var petName=getUrlParameter('name');
-    var hotel=getUrlParameter('hotel');
-    self.loadPets(petName,hotel);
+    self.loadPets(petName);
 }
 
 $(document).ready(function() {

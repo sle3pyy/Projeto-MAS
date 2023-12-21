@@ -38,6 +38,8 @@ var vm= function(){
             formData.hotelName = null
             formData.checkinDate = null
             formData.checkoutDate = null
+            formData.status = null
+            formData.eaten = null
             console.log(formData)
         });
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
@@ -83,6 +85,7 @@ var vm= function(){
 
         account.animals = [];
         localStorage.setItem('accounts', JSON.stringify(existingData));
+        localStorage.removeItem('pets_Hospedated');
         console.log(account);
         console.log(JSON.parse(localStorage.getItem('accounts')));
     });
