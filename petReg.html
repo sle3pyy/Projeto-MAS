@@ -65,13 +65,16 @@
                     </div>
                 </div>
             </div>
-            <div data-bind="foreach: animals">
-                <div>
+            <div class="row"data-bind="foreach: animals">
+                <div class="col-3">
                     <h3 data-bind="text: name"></h3>
+                    <p>Type: <span data-bind="text: animalType"></span></p>
                     <p>Age: <span data-bind="text: Age"></span></p>
                     <p>Race: <span data-bind="text: Race"></span></p>
                     <p>Weight: <span data-bind="text: Weight"></span></p>
-                    <p>Type: <span data-bind="text: animalType"></span></p>
+                    <!--ko if: hotelName!=null-->
+                    <p>Hotel: <span data-bind="text: hotelName"></span></p>
+                    <!--/ko-->
                 </div>
             </div>
             <div class="border-bottom pt-4 pb-2 mb-3">

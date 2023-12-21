@@ -35,6 +35,9 @@ var vm= function(){
         var formData = {}; 
         $(this).find('input, select').each(function() {
             formData[$(this).attr('id')] = $(this).val();
+            formData.hotelName = null
+            formData.checkinDate = null
+            formData.checkoutDate = null
             console.log(formData)
         });
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];

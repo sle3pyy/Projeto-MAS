@@ -75,7 +75,24 @@ function BookingFormViewModel() {
                 console.log(JSON.parse(localStorage.getItem("pets_Hospedated")));
             }
         }
-    });
+        var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
+    self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    var accountIndex = existingData.findIndex(account => account.email === self.loggedInUser.email);
+    var animalIndex = existingData[accountIndex].animals.findIndex(animal => animal.name === selectedAnimalValue);
+
+    if (accountIndex !== -1 && animalIndex !== -1) {
+        existingData[accountIndex].animals[animalIndex].hotelName = self.name();
+        existingData[accountIndex].animals[animalIndex].checkinDate = $('#checkin-date').val();
+        existingData[accountIndex].animals[animalIndex].checkoutDate = $('#checkout-date').val();
+    }
+
+    // Save the updated accounts data back to local storage
+    localStorage.setItem('accounts', JSON.stringify(existingData));
+
+    console.log(existingData[accountIndex]);
+    alert('Booking confirmed!');
+    window.location.href = 'index.html';
+});
 
 
     function getUrlParameter(sParam) {
@@ -100,7 +117,7 @@ function BookingFormViewModel() {
         self.activate(pg);
     }
     console.log("VM initialized!");
-}
+};
 
 $(document).ready(function() {
 ko.applyBindings(new BookingFormViewModel());
