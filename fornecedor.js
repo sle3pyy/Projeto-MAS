@@ -1,22 +1,4 @@
-function Comment(user, date, content) {
-    this.user = ko.observable(user);
-    this.date = ko.observable(date);
-    this.content = ko.observable(content);
-}
 
-function AppViewModel() {
-    // Seu código existente...
-
-    this.comments = ko.observableArray([
-        new Comment("João", "2023-01-01", "Ótimo serviço!"),
-        new Comment("Maria", "2023-02-15", "Adorei a estadia."),
-        // Adicione mais comentários conforme necessário
-    ]);
-
-    // Adicione aqui o código para adicionar novos comentários
-}
-
-ko.applyBindings(new AppViewModel());
 
 $(document).ready(function () {
   // Função para manipular a submissão do formulário
