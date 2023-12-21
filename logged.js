@@ -1,3 +1,4 @@
+
 self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 if (loggedInUser && loggedInUser.accType==="cliente") {
     $('a[href="log-in.html"]').html('<i class="fa fa-user"></i>').attr('href', 'petReg.html');

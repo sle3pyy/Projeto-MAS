@@ -40,6 +40,7 @@ var vm= function(){
             formData.checkoutDate = null
             formData.status = null
             formData.eaten = null
+            formData.owner = loggedInUser.email
             console.log(formData)
         });
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];

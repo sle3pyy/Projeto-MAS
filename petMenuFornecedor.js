@@ -29,10 +29,30 @@ function ViewModel() {
     comportamentoAnimalSelect.onchange = handleSelectChange;
 
     function handleSelectChange() {
-    var alimentacaoAnimal = alimentacaoAnimalSelect.value;
-    var comportamentoAnimal = comportamentoAnimalSelect.value;
-    console.log('Alimentação do Animal:', alimentacaoAnimal);
-    console.log('Comportamento do Animal:', comportamentoAnimal);
+        var alimentacaoAnimal = alimentacaoAnimalSelect.value;
+        var comportamentoAnimal = comportamentoAnimalSelect.value;
+        console.log('Alimentação do Animal:', alimentacaoAnimal);
+        console.log('Comportamento do Animal:', comportamentoAnimal);
+
+        let accounts = JSON.parse(localStorage.getItem('accounts')) || [];
+        var account = accounts.find(account => account.email === self.pet().owner);
+        var animals = account.animals;
+        console.log(animals);
+        matchedPet=self.pet()
+        matchedPet.eaten = alimentacaoAnimal;
+        matchedPet.status = comportamentoAnimal;
+
+        var index = animals.findIndex(matchedPet => matchedPet.name === matchedPet.name);
+        console.log(index)
+
+        // Replace the pet at that index with the updated pet
+        if (index !== -1) {
+            animals[index] = matchedPet;
+        }
+
+        // Update the 'accounts' item in local storage
+        localStorage.setItem('accounts', JSON.stringify(accounts));
+        console.log(JSON.parse(localStorage.getItem('accounts')));
     }
     self.activate = function (pet) {
         self.name(pet.name)

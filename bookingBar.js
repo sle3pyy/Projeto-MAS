@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
     var storedDestino = localStorage.getItem('destino');
     var storedSelectedPets = localStorage.getItem('selectedPets');
@@ -71,3 +73,5 @@ document.getElementById('cidade').addEventListener('change', function() {
       }
     }
   });
+
+  
