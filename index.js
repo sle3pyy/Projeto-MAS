@@ -2,8 +2,11 @@ var vm= function(){
     var self = this;
     self.animals = ko.observableArray([]);
     self.petPhotos = ko.observableArray([]);
+    self.id=ko.observable('');
     self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     console.log(self.loggedInUser.email);
+    var account = JSON.parse(localStorage.getItem('accounts')).find(account => account.email === self.loggedInUser.email);
+    self.id(account.id);
 
     if (self.loggedInUser.email) {
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];

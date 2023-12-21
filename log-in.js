@@ -8,10 +8,9 @@ $(document).ready(function() {
         });
         console.log(formData);
         var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
-        var account = existingData.find(account => account.email === formData.email && account.password === formData.pass);
-        console.log(account.accType);
+        var account = existingData.find(existingData => existingData.email === formData.email && existingData.password === formData.pass);
 
-        if (!account) {
+        if (account === undefined) {
             alert('Invalid email or password.');
             return;
         } else {
