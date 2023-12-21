@@ -4,7 +4,7 @@ if (loggedInUser && loggedInUser.accType==="cliente") {
     $('a[href="sign-in.html"]').text('Log out').attr('href', 'index.html').attr('id', 'logout');
     
     console.log('Logged in!');
-    console.log(localStorage.getItem('loggedInEmail'));
+    console.log(loggedInUser.email);
 }
 else if(loggedInUser && loggedInUser.accType==="fornecedor"){
     $('a[href="log-in.html"]').html('<i class="fa fa-user"></i>').attr('href', 'atividadeFornecedor.html');
@@ -12,7 +12,7 @@ else if(loggedInUser && loggedInUser.accType==="fornecedor"){
     $("#regp").hide();
     
     console.log('Logged in!');
-    console.log(localStorage.getItem('loggedInEmail'));
+    console.log(loggedInUser.email);
 }
 else {
     console.log('Not logged in!');
@@ -20,6 +20,6 @@ else {
 
 $('#logout').on('click', function(event) {
     event.preventDefault();
-    localStorage.removeItem('loggedInEmail');
+    localStorage.removeItem('loggedInUser');
     window.location.href = 'index.html'; 
 });
