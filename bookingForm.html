@@ -88,7 +88,7 @@
         </div>
     </nav>
     <br/>
-    <form action="reservation.php" method="post">
+    <form >
       <div class="container">
           <div class="row">
             <div class="col-md-9">
@@ -111,7 +111,7 @@
                                 <option value="Mbway">MBway</option>
                                 <!-- other options -->
                             </select>
-                            <select id="animal-select" data-bind="options: animals, optionsText: 'name', optionsValue: 'id', optionsCaption: 'Select an animal'"></select>
+                            
                           </div>
                       </div>
                   </div>
@@ -122,10 +122,20 @@
                                 <label for="telefone" style="text-align: center;">Telefone</label>
                                 <div class="input-group" style="margin-bottom: 20px;">
                                     <span class="input-group-text">+351</span>
-                                    <input type="text" class="form-control" id="telefone" placeholder="987654321" maxlength="9" required>
+                                    <input type="text" class="form-control" id="telefone" placeholder="987654321" maxlength="9">
                                 </div>
                             </div>
                            
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <div class="elem-group">
+                            <h3>Pets</h3>
+                        </div>
+                        <div class="elem-group">
+                            <select id="animal-select" data-bind="options: animals, optionsText: 'name', optionsValue: 'name', optionsCaption: 'Select an animal'" required></select>
                         </div>
                     </div>
                 </div>
@@ -145,7 +155,10 @@
   
                   <!-- Botão de Confirmação -->
                   <div class="elem-group mt-3">
-                    <input type="submit" class="btn btn-primary" name="" id="" value="Pay Now" />
+                    <form data-bind="submit: onSubmit">
+                        <!-- form fields -->
+                        <button type="submit">Pay Now</button>
+                    </form>
                   </div>
   
                   <!-- Espaçamento -->
@@ -189,11 +202,6 @@
                               <div class="elem-group inlined">
                                   <h5 style="float:right"id="tp"></h5>
                               </div>
-                          </div>
-  
-                          <!-- Botão de Pagar Agora -->
-                          <div class="elem-group mt-3">
-                            <input type="submit" class="btn btn-primary" name="" id="" value="Pay Now" />
                           </div>
                       </div>
                   </div>

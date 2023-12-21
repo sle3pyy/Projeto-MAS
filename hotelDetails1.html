@@ -120,73 +120,7 @@
       <div class="row">
         <!-- Retângulo Amarelo com Mapa e Filtros -->
         <div class="col-md-4">
-          <div class="yellow-box">
-              <!-- Mapa (substitua este conteúdo pelo seu mapa real) -->
-              <div style="height: 300px; background-color: #ccc;">Mapa</div>
       
-              <!-- Filtros -->
-              <div class="row mt-3">
-                  <div class="col-md-6">
-                      <label for="preco" class="form-label">Filtrar por Preço:</label>
-                      <input type="range" class="form-range" id="preco" min="0" max="1000" step="50">
-                  </div>
-                  <div class="col-md-6">
-                      <label for="ratings" class="form-label">Filtrar por Ratings:</label>
-                      <div class="rating">
-                          <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 estrelas"></label>
-                          <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 estrelas"></label>
-                          <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 estrelas"></label>
-                          <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 estrelas"></label>
-                          <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 estrela"></label>
-                      </div>
-                  </div>
-              </div>
-      
-              <!-- Caixas de texto para as datas -->
-              <div class="row mt-3">
-                <div class="col-md-6">
-                    <label for="checkin" class="form-label">Check-In:</label>
-                    <input type="text" class="form-control rounded" id="checkin" readonly>
-                </div>
-                <div class="col-md-6">
-                    <label for="checkout" class="form-label">Check-Out:</label>
-                    <input type="text" class="form-control rounded" id="checkout" readonly>
-                </div>
-            </div>
-
-            <div class="row mt-3">
-                <div class="col-md-12">
-                    <label for="precos" class="form-label">Preços:</label>
-                    <textarea class="form-control rounded" id="precos" readonly></textarea>
-                </div>
-            </div>
-<br/>
-            <!-- Botão de Reserva -->
-            <div class="centered mb-3 text-center">
-                <a type="button" class="btn btn-primary" data-bind="attr: {href:'./bookingForm.html?id='+ id()}">Reservar Agora</a>
-            </div>
-      
-          </div>
-          <!-- Cards Horizontais -->
-<div class="row mt-3">
-  <!-- Exemplo de Card Horizontal de Hotel (pode replicar conforme necessário) -->
-      <div class="card mb-3">
-          <div class="row g-0">
-              <div class="col-md-4">
-                  <img src="https://via.placeholder.com/75" class="img-fluid rounded-start" alt="Imagem do Hotel">
-              </div>
-              <div class="col-md-8">
-                  <div class="card-body">
-                      <h6 class="card-title" data-bind="text:name"></h6>
-                      <p class="card-text"  data-bind="text:'Preço: '+ price() + '/noite'"></p>
-                      <p class="card-text"  data-bind="text:'Avaliação: '+rating()"></p>
-                      <a href="#" class="btn btn-primary" data-bind="attr: {href:'./hotelDetails1.html?id='+ id}">Ver Detalhes</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-  <!-- Fim do Exemplo de Card Horizontal de Hotel -->
-
   <!-- Adicione mais cards horizontais conforme necessário -->
 </div>
 <!-- Fim dos Cards Horizontais -->
@@ -194,7 +128,7 @@
   
 <!-- Fim dos Cards Horizontais -->
       <!-- Lista de Cards de Hotéis -->
-<div class="col-md-8">
+<div class="col-md-12">
   <!-- Exemplo de Layout de Hotel (você pode replicar isso dinamicamente com dados reais) -->
   <div class="row">
       <!-- Carrossel de Imagens -->
@@ -216,7 +150,7 @@
                       <span class="visually-hidden">Próximo</span>
                   </button>
               </div>
-              <div class="card-body">
+              <div class="card-body" style="text-align:center">
                 <h2 class="card-title" data-bind="text:name"></h2>
                 <p class="card-text" data-bind="text: 'Avaliação: '+rating()+' estrelas'"></p>
             </div>
@@ -236,6 +170,7 @@
                 </div>
             </div>
         </div>
+        <a type="button" class="btn btn-primary" data-bind="attr: {href:'./bookingForm.html?id='+ id()}">Reservar Agora</a>
     </div>
   
  <!-- Secção de Comentários -->

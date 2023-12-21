@@ -13,6 +13,7 @@ function BookingFormViewModel() {
     self.rating = ko.observable('');
     self.miniPhoto = ko.observable('');
     self.bigPhoto = ko.observable('');  
+    self.selectedAnimal = ko.observable();
     var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
     self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     var account = existingData.find(account => account.email === loggedInUser.email);
@@ -41,6 +42,42 @@ function BookingFormViewModel() {
         self.bigPhoto(hotel.bigPhoto);
        console.log(hotel)
     };
+
+    $('form').on('submit', function(event) {
+        event.preventDefault();
+        var selectedAnimalValue = $('#animal-select').val();
+        console.log(selectedAnimalValue);
+        if (selectedAnimalValue) {
+            var selectedAnimalInfo = self.animals().find(function(animal) {
+                return animal.name === selectedAnimalValue;
+            });
+    
+            selectedAnimalInfo.hotelName = self.name();
+            selectedAnimalInfo.checkinDate = $('#checkin-date').val();
+            selectedAnimalInfo.checkoutDate = $('#checkout-date').val();
+    
+            // Retrieve the existing pets from the local storage
+            var petsHospedated = JSON.parse(localStorage.getItem("pets_Hospedated")) || [];
+            console.log(petsHospedated);
+    
+            // Check if the animal is already in petsHospedated
+            if (petsHospedated && petsHospedated.some(function(pet) {
+                return pet.name === selectedAnimalInfo.name;
+            })) {
+                alert('This pet is already in a hotel!');
+            } else {
+                // Add the new pet to the array
+                petsHospedated.push(selectedAnimalInfo);
+    
+                // Store the updated array back in the local storage
+                localStorage.setItem("pets_Hospedated", JSON.stringify(petsHospedated));
+                console.log(selectedAnimalInfo);
+                console.log(JSON.parse(localStorage.getItem("pets_Hospedated")));
+            }
+        }
+    });
+
+
     function getUrlParameter(sParam) {
         var sPageURL = window.location.search.substring(1),
             sURLVariables = sPageURL.split('&'),
@@ -88,7 +125,10 @@ function calculateDateDifference() {
 
     return Math.abs(differenceInDays);
 }
-
+$('#clearStorage').on('click', function() {
+    localStorage.removeItem("pets_Hospedated");
+    alert('Storage cleared!');
+});
 
 
 // Usage:

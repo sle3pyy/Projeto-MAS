@@ -7,8 +7,8 @@ $('form').on('submit', function(event) {
         console.log(formData)
     });
     var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
-    var loggedInEmail = localStorage.getItem('loggedInEmail');
-    var account = existingData.find(account => account.email === loggedInEmail);
+    self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    var account = existingData.find(account => account.email === loggedInUser.email);
 
     if (account) {
         alert('No logged-in account found.');
@@ -38,8 +38,8 @@ $('form').on('submit', function(event) {
 });
 $("document").ready(function() {
     var existingData = JSON.parse(localStorage.getItem('accounts')) || [];
-    var loggedInEmail = localStorage.getItem('loggedInEmail');
-    var account = existingData.find(account => account.email === loggedInEmail);
+    self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    var account = existingData.find(account => account.email === loggedInUser.email);
     console.log("hey")
 
     if (account) {
