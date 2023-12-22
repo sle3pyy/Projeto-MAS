@@ -49,16 +49,15 @@
         <div class="row g-0">
             <!-- Imagem à esquerda -->
             <div class="col-md-4">
-                <img src="caminho/para/sua/imagem.jpg" alt="Imagem do Animal" class="img-fluid">
+                <img data-bind="attr: {src:petPhoto}" alt="Imagem do Animal" class="img-fluid">
             </div>
             <!-- Informações do animal à direita -->
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">Nome do Animal</h5>
-                    <p class="card-text">Tipo: Cão</p>
-                    <p class="card-text">Quantidade: 2</p>
-                    <p class="card-text">Descrição: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <!-- Adicione mais informações conforme necessário -->
+                    <h5 class="card-title" data-bind="html:'<strong>' + name()+ '</strong>'">Nome do Animal</h5>
+                  <p></p>
+                  <p class="card-text" data-bind="html:'<strong>Tipo: </strong>' + animalType() "></p>
+                  <p class="card-text" data-bind="html:'<strong>Descrição: </strong>'+ race()+', '+age()+' anos, '+weight() "></p>
                 </div>
             </div>
         </div>
@@ -66,17 +65,17 @@
     <!-- Seção com informações sobre o animal no alojamento -->
     <div class="row mt-4">
         <!-- Lado Esquerdo -->  
-            <div class="card">
+        <div class="col-md-8">
+            <div class="card ">
                 <div class="card-body">
                     <h3 class="card-title">Estado do Animal no Alojamento</h3>
-                    <p><strong>Alimentação:</strong> Já almoçou</p>
-                    <p><strong>Comportamento:</strong> Dócil</p>
+                    <p data-bind="html:'<strong>Alimentação: </strong>'+ eaten() "></p>
+                    <p data-bind="html:'<strong>Comportamento: </strong>'+ status() "></p>
                     <!-- Adicione mais informações conforme necessário -->
                 </div>
             </div>
-    
             <!-- Seção de Mensagens -->
-            <div class="card mt-3">
+            <div class="card mt-3 ">
                 <div class="card-body">
                     <h3 class="card-title">Mensagens para o Dono do Alojamento</h3>
                     
@@ -104,7 +103,7 @@
                     <!-- Fim do Formulário para Nova Mensagem -->
                 </div>
             </div>
-        </div>
+        </div>  
     
         <!-- Lado Direito -->
         <div class="col-md-4">
@@ -112,7 +111,7 @@
             <div class="card">
                 <img src="https://via.placeholder.com/150" class="card-img-top" alt="Imagem do Hotel">
                 <div class="card-body">
-                    <h5 class="card-title">Nome do Hotel</h5>
+                    <h5 class="card-title" data-bind="text:hotelName"></h5>
                 </div>
             </div>
     
@@ -120,13 +119,13 @@
             <div class="card mt-3">
                 <div class="card-body">
                     <h5 class="card-title">Últimas Mensagens</h5>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <strong>Assunto:</strong> Reservas para o próximo mês
-                            <p>Mensagem: Olá, gostaria de fazer reservas para o próximo mês. Obrigado!</p>
-                        </li>
-                        <!-- Adicione mais mensagens conforme necessário -->
-                    </ul>
+                    <div data-bind="foreach: message">
+                        <ul class="list-group">
+                            <li class="list-group-item" data-bind="html:'<strong>Assunto: </strong>'+ subject+ '<p>Mensagem: '+message+'</p>'">
+                            </li>
+                            <!-- Adicione mais mensagens conforme necessário -->
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -151,7 +150,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
       <script src="logged.js"></script>
-      <script src="bookingar.js"></script>
+      <script src="confiçoesPet.js"></script>
   
 </body>
 </html>

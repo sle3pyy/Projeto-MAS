@@ -10,7 +10,11 @@ function ViewModel() {
     self.age = ko.observable('');
     self.weight = ko.observable('');
     self.petPhoto = ko.observable('');
-
+    self.message = ko.observableArray([]);
+    var msgClientData = JSON.parse(localStorage.getItem('msgClient'));
+    if (msgClientData) {
+        self.message(msgClientData);
+    }
     self.loadPets = function(petName) {
         let accounts = JSON.parse(localStorage.getItem('accounts')) || [];
         self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
@@ -85,4 +89,24 @@ function ViewModel() {
 
 $(document).ready(function() {
 ko.applyBindings(new ViewModel());
+});
+$('form').on('submit', function(event) {
+    event.preventDefault();
+
+    var subject = $('#subject').val();
+    var message = $('#message').val();
+
+    var newMsg = {
+        subject: subject,
+        message: message
+    };
+
+    var msgClient = JSON.parse(localStorage.getItem('msgHotel')) || [];
+    msgClient.push(newMsg);
+    localStorage.setItem('msgHotel', JSON.stringify(msgClient));
+
+    $('#subject').val('');
+    $('#message').val('');
+
+    alert('Message sent!');
 });

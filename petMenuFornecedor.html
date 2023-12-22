@@ -137,6 +137,18 @@
                   <!-- Adicione mais informações conforme necessário -->
               </div>
           </div>
+          <div class="card mt-3">
+            <div class="card-body">
+            <h5 class="card-title">Últimas Mensagens</h5>
+            <div data-bind="foreach: message">
+                <ul class="list-group">
+                    <li class="list-group-item" data-bind="html:'<strong>Assunto: </strong>'+ subject+ '<p>Mensagem: '+message+'</p>'">
+                    </li>
+                    <!-- Adicione mais mensagens conforme necessário -->
+                </ul>
+            </div>
+            </div>
+        </div>
       </div>
   </div>
 </div>
