@@ -6,15 +6,14 @@ function ViewModel() {
     self.checkinDate = ko.observable('');
     self.checkoutDate = ko.observable('');
     self.animalType = ko.observable('');
+    self.hotelName = ko.observable('');
     self.race = ko.observable('');
     self.age = ko.observable('');
     self.weight = ko.observable('');
     self.petPhoto = ko.observable('');
     self.message = ko.observableArray([]);
     var msgClientData = JSON.parse(localStorage.getItem('msgClient'));
-    if (msgClientData) {
-        self.message(msgClientData);
-    }
+    
     self.loadPets = function(petName) {
         let accounts = JSON.parse(localStorage.getItem('accounts')) || [];
         self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
@@ -68,6 +67,15 @@ function ViewModel() {
         self.age(pet.Age)
         self.weight(pet.Weight);
         self.petPhoto(pet.petPhoto);
+        self.hotelName(pet.hotelName);
+        if (msgClientData) {
+            var matchingMessages = msgClientData.filter(msg => msg.name === self.name() && msg.hotelName === self.hotelName());
+            if (matchingMessages.length > 0) {
+                self.message(matchingMessages);
+                console.log(matchingMessages);
+            }
+        }
+
     };
     function getUrlParameter(sParam) {
         var sPageURL = window.location.search.substring(1),
@@ -85,28 +93,31 @@ function ViewModel() {
     };
     var petName=getUrlParameter('name');
     self.loadPets(petName);
+    $('form').on('submit', function(event) {
+        event.preventDefault();
+    
+        var subject = $('#subject').val();
+        var message = $('#message').val();
+    
+        var newMsg = {
+            subject: subject,
+            message: message,
+            name: self.name(),
+            hotelName: self.hotelName()
+        };
+    
+        var msgClient = JSON.parse(localStorage.getItem('msgHotel')) || [];
+        msgClient.push(newMsg);
+        localStorage.setItem('msgHotel', JSON.stringify(msgClient));
+    
+        $('#subject').val('');
+        $('#message').val('');
+    
+        alert('Message sent!');
+    });
 }
 
 $(document).ready(function() {
 ko.applyBindings(new ViewModel());
 });
-$('form').on('submit', function(event) {
-    event.preventDefault();
 
-    var subject = $('#subject').val();
-    var message = $('#message').val();
-
-    var newMsg = {
-        subject: subject,
-        message: message
-    };
-
-    var msgClient = JSON.parse(localStorage.getItem('msgHotel')) || [];
-    msgClient.push(newMsg);
-    localStorage.setItem('msgHotel', JSON.stringify(msgClient));
-
-    $('#subject').val('');
-    $('#message').val('');
-
-    alert('Message sent!');
-});

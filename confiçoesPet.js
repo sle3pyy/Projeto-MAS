@@ -11,6 +11,7 @@ var vm= function(){
     self.hotelName = ko.observable();
     self.petPhoto = ko.observable();
     self.status = ko.observable();
+    self.message = ko.observableArray([]);
     let accounts = JSON.parse(localStorage.getItem('accounts')) || [];
     self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     var account = accounts.find(account => account.email === self.loggedInUser.email);
@@ -18,11 +19,7 @@ var vm= function(){
     self.animals = ko.observableArray([]);
     self.animals(animals);
     console.log(self.animals());
-    self.message = ko.observableArray([]);
-    var msgClientData = JSON.parse(localStorage.getItem('msgClient'));
-    if (msgClientData) {
-        self.message(msgClientData);
-    }
+    var msgClientData = JSON.parse(localStorage.getItem('msgHotel'));
 
     self.activate = function (name) {
         self.name(name);
@@ -38,6 +35,12 @@ var vm= function(){
         self.hotelName(animal.hotelName);
         self.petPhoto(animal.petPhoto);
         self.status(animal.status);
+        if (msgClientData) {
+            var matchingMessages = msgClientData.filter(msg => msg.name === self.name() && msg.hotelName === self.hotelName());
+            if (matchingMessages.length > 0) {
+                self.message(matchingMessages);
+            }
+        }
     };
 
     function getUrlParameter(sParam) {
@@ -62,30 +65,30 @@ var vm= function(){
             self.activate(pg);
         }
         console.log("VM initialized!");
+        $('form').on('submit', function(event) {
+            event.preventDefault();
+        
+            var subject = $('#subject').val();
+            var message = $('#message').val();
+        
+            var newMsg = {
+                subject: subject,
+                message: message,
+                name: self.name(),
+                hotelName: self.hotelName()
+            };
+        
+            var msgClient = JSON.parse(localStorage.getItem('msgClient')) || [];
+            msgClient.push(newMsg);
+            localStorage.setItem('msgClient', JSON.stringify(msgClient));
+        
+            $('#subject').val('');
+            $('#message').val('');
+        
+            alert('Message sent!');
+        });
 };
 
 $(function(){
-
     ko.applyBindings(new vm());
-});
-
-$('form').on('submit', function(event) {
-    event.preventDefault();
-
-    var subject = $('#subject').val();
-    var message = $('#message').val();
-
-    var newMsg = {
-        subject: subject,
-        message: message
-    };
-
-    var msgClient = JSON.parse(localStorage.getItem('msgClient')) || [];
-    msgClient.push(newMsg);
-    localStorage.setItem('msgClient', JSON.stringify(msgClient));
-
-    $('#subject').val('');
-    $('#message').val('');
-
-    alert('Message sent!');
 });
