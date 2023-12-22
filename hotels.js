@@ -23,6 +23,9 @@ function ViewModel() {
         console.log(self.hotel());
         var search = document.getElementById('cidade').value;
         var matchedHotels = self.hotel().filter(hotels => hotels.Distrito.toLowerCase().includes(search.toLowerCase()));
+        if (matchedHotels.length === 0) {
+            alert("Não foram encontrados resultados para a sua pesquisa")
+        }
         console.log(matchedHotels)
         self.hotel(matchedHotels);
     }
