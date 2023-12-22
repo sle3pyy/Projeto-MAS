@@ -108,10 +108,10 @@
   <!-- Card para atividade -->
   <div class="col-6 activity-card">
     <div class="card">
-      <div class="card-body">
+      <div class="card-body" >
         <h5 class="card-title">Atividade</h5>
-        <p class="card-text">Número de Notificações: X</p>
-        <button type="button" class="btn btn-primary">Ver Atividade</button>
+        <p class="card-text" data-bind="text:'Número de Notificações: '+ messages()">X</p>
+        <a  class="btn btn-primary" data-bind="attr: {href: './petMenuFornecedor.html?name='+ name +'&hotel='+ hotelName }">Ver Atividade</a>
       </div>
     </div>
   </div>

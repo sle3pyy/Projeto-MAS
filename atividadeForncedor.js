@@ -18,7 +18,13 @@ function ViewModel() {
     self.rating = ko.observable('');
     self.miniPhoto = ko.observable('');
     self.bigPhoto = ko.observable('');  
+    self.messages = ko.observable("0");
     self.petsHospedated = ko.observableArray([]);
+    var msgClientData = JSON.parse(localStorage.getItem('msgClient'));
+    if (msgClientData) {
+        var length = (Object.values(msgClientData).length);
+        self.messages(length);
+    }
 
     this.comments = ko.observableArray([
         new Comment("João", "2023-01-01", "Ótimo serviço!"),

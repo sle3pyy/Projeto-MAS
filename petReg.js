@@ -70,6 +70,7 @@ var vm= function(){
     
         console.log(account)
         console.log(JSON.parse(localStorage.getItem('accounts')));
+        window.location.href = 'petReg.html';
     });
 
 
