@@ -29,9 +29,7 @@ function ViewModel() {
     this.comments = ko.observableArray([
         new Comment("João", "2023-01-01", "Ótimo serviço!"),
         new Comment("Maria", "2023-02-15", "Adorei a estadia."),
-        // Adicione mais comentários conforme necessário
     ]);
-    // Observable array to store the pets
     let accounts = JSON.parse(localStorage.getItem('accounts')) || [];
     self.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     var account = accounts.find(account => account.email === loggedInUser.email);
@@ -61,8 +59,6 @@ function ViewModel() {
         self.petsHospedated(matchedPets);
         console.log(matchedPets)
     };
-
-    // Load the pets when the ViewModel is created
     self.activate(self.hotel.id)
     console.log("Vm innitiated")
 }

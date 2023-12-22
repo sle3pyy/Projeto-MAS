@@ -26,9 +26,6 @@ var vm= function(){
         }
         console.log(self.animals())
     }
-    else {
-        console.log('Not logged in!');
-    }
     
     $('#logout').on('click', function(event) {
         event.preventDefault();

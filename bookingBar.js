@@ -25,7 +25,6 @@ document.getElementById('cidade').addEventListener('change', function() {
     'Pássaros': 0,
   };
 
-  // Listen for button clicks to update quantity
   document.querySelectorAll('.btn-quantity').forEach(function(btn) {
     btn.addEventListener('click', function() {
       const animal = this.getAttribute('data-animal');
@@ -37,18 +36,15 @@ document.getElementById('cidade').addEventListener('change', function() {
         quantityCounters[animal]--;
       }
 
-      // Update the quantity display
       document.getElementById(`quantity${animal.replace('ã', 'a').replace('á', 'a')}`).innerText = quantityCounters[animal];
     });
   });
 
-  // Listen for button click to show the options
   document.getElementById('showOptionsButton').addEventListener('click', function() {
     const optionsContainer = document.getElementById('optionsContainer');
     optionsContainer.classList.toggle('d-none');
   });
 
-  // Listen for button click to confirm and close the options
   document.getElementById('confirmButton').addEventListener('click', function() {
     let selectedPets = '';
 
@@ -58,13 +54,11 @@ document.getElementById('cidade').addEventListener('change', function() {
       }
     }
 
-    // Remove trailing comma and space
     document.getElementById('hospedes').value = selectedPets.replace(/, $/, '');
     localStorage.setItem('selectedPets', selectedPets);
     document.getElementById('optionsContainer').classList.add('d-none');
   });
 
-  // Reset the counters when the options are hidden
   document.getElementById('optionsContainer').addEventListener('transitionend', function() {
     if (this.classList.contains('d-none')) {
       for (const animal in quantityCounters) {

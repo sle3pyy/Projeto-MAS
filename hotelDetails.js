@@ -10,7 +10,6 @@ function ViewModel() {
   self.miniPhoto = ko.observable('');
   self.bigPhoto = ko.observable('');  
 
-  // Get accounts from local storage
   let accounts = JSON.parse(localStorage.getItem('accounts')) || [];
   let hotelis = accounts.filter(account => account.accType === 'fornecedor');
 

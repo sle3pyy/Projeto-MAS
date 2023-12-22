@@ -20,7 +20,6 @@ function BookingFormViewModel() {
     self.animals(account.animals);
     let hotels = existingData.filter(existingData => existingData.accType === 'fornecedor');
 
-  // Push hotels into the observable array
   hotels.forEach(hotel => self.hotel.push(hotel));
     $('#checkout-date').change(function() {
         var dateDifference = calculateDateDifference();
@@ -57,20 +56,16 @@ function BookingFormViewModel() {
             selectedAnimalInfo.checkinDate = $('#checkin-date').val();
             selectedAnimalInfo.checkoutDate = $('#checkout-date').val();
     
-            // Retrieve the existing pets from the local storage
             var petsHospedated = JSON.parse(localStorage.getItem("pets_Hospedated")) || [];
             console.log(petsHospedated);
     
-            // Check if the animal is already in petsHospedated
             if (petsHospedated && petsHospedated.some(function(pet) {
                 return pet.name === selectedAnimalInfo.name;
             })) {
                 alert('This pet is already in a hotel!');
             } else {
-                // Add the new pet to the array
                 petsHospedated.push(selectedAnimalInfo);
     
-                // Store the updated array back in the local storage
                 localStorage.setItem("pets_Hospedated", JSON.stringify(petsHospedated));
                 console.log(selectedAnimalInfo);
                 console.log(JSON.parse(localStorage.getItem("pets_Hospedated")));
@@ -85,7 +80,6 @@ function BookingFormViewModel() {
                     existingData[accountIndex].animals[animalIndex].checkoutDate = $('#checkout-date').val();
                 }
 
-                // Save the updated accounts data back to local storage
                 localStorage.setItem('accounts', JSON.stringify(existingData));
 
                 console.log(existingData[accountIndex]);

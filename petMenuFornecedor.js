@@ -28,7 +28,6 @@ function ViewModel() {
     var alimentacaoAnimalSelect = document.getElementById('alimentacaoAnimal');
     var comportamentoAnimalSelect = document.getElementById('comportamentoAnimal');
 
-    // Attach onchange event handlers
     alimentacaoAnimalSelect.onchange = handleSelectChange;
     comportamentoAnimalSelect.onchange = handleSelectChange;
 
@@ -49,12 +48,10 @@ function ViewModel() {
         var index = animals.findIndex(matchedPet => matchedPet.name === matchedPet.name);
         console.log(index)
 
-        // Replace the pet at that index with the updated pet
         if (index !== -1) {
             animals[index] = matchedPet;
         }
 
-        // Update the 'accounts' item in local storage
         localStorage.setItem('accounts', JSON.stringify(accounts));
         console.log(JSON.parse(localStorage.getItem('accounts')));
     }
