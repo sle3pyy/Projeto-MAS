@@ -73,7 +73,7 @@ let hotels={
     {
       "id": 2,
       "name": "Hotel e Escola Canina Armando4Dogs",
-      "miniDescription": "Hotel Canino✔ Presta serviços Viseu, Aveiro, Albergaria-A-Velha.",
+      "miniDescription": "Hotel Canino✔ Presta serviços Porto, Aveiro.",
       "description": "Academia canina Hotel,Viseu, Aveiro. - Centro de Treino e Diversão! Creche para cães Viseu,Aveiro. 2 áreas de Alojamentos: ✔Para os cães maiores área recreativa com 3.600 m2 e 20 boxes; ✔Para os mais pequenos área recreativa com 500m2 e 13 boxes. ✔Serviço de transporte.",
       "price": "20",
       "rating": 4.9,
